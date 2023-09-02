@@ -1,6 +1,6 @@
 # This will be the original code
 import time
-import matplotlib.pyplot as plt
+
 
 def Counting_sort(A,B,k):
     C = [0]*(k+1)
