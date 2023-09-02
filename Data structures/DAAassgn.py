@@ -1,3 +1,7 @@
+# This will be the original code
+import time
+import matplotlib.pyplot as plt
+
 def Counting_sort(A,B,k):
     C = [0]*(k+1)
     # print(C)
@@ -21,29 +25,34 @@ k = max(A)  # Assuming k is the maximum value in A
 
 Counting_sort(A, B, k)
 print("Sorted Array : ",B)
-# def counting_sort(A, B, k):
-#     C = [0] * (k + 1)
 
-#     for i in range(0, len(A)):
-#         C[A[i]] += 1
-#     print(C)
 
-#     CU = 0
-#     for i in range(0, k + 1):
-#         temp = C[i]
-#         C[i] = CU
-#         CU += temp
+
+# This will be the modified code 
+
+def counting_sort(A, B, k):
+    C = [0] * (k + 1)
+
+    for i in range(0, len(A)):
+        C[A[i]] += 1
+    print(C)
+
+    CU = 0
+    for i in range(0, k + 1):
+        temp = C[i]
+        C[i] = CU
+        CU += temp
     
-#     print(C)
-#     for j in range(1, len(A) + 1):
-#         B[C[A[j - 1]]] = A[j - 1]
-#         C[A[j - 1]] += 1
-#     print(C)
+    print(C)
+    for j in range(1, len(A) + 1):
+        B[C[A[j - 1]]] = A[j - 1]
+        C[A[j - 1]] += 1
+    print(C)
 
-# # Example usage
-# A = [4, 2, 2, 8, 3, 3, 0]
-# B = [0] * len(A)
-# k = max(A)  # Assuming k is the maximum value in A
+# Example usage
+A = [4, 2, 2, 8, 3, 3, 0]
+B = [0] * len(A)
+k = max(A)  # Assuming k is the maximum value in A
 
-# counting_sort(A, B, k)
-# print("Sorted array B:", B)
+counting_sort(A, B, k)
+print("Sorted array B:", B)
