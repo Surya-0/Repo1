@@ -55,7 +55,7 @@ class Graph:
 
             for vertex in self.graph[element]:
                 in_degree[vertex] -= 1
-                if in_degree[vertex] == 0:
+                if in_degree[vertex]    == 0:
                     queue.append(vertex)
 
         if len(topological_sort) != len(self.graph):

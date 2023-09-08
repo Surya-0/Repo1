@@ -37,7 +37,30 @@ class Graph:
             print(vertex," : ",self.graph[vertex])    
     
     def topological_sort(self):
-        in_degree
+        in_degree = {}
+        for vertex in self.graph:
+            in_degree[vertex] = 0 
+        
+        for vertex1 in self.graph:
+            for vertex2 in self.graph[vertex1]:
+                in_degree[vertex2]+=1
+        
+        # print(in_degree)
+        queue = []
+        topological_sort = []
+        for vertex in in_degree:
+            if in_degree[vertex] == 0:
+                queue.append(vertex)
+        while queue:
+            element = queue.pop(0)
+            topological_sort.append(element)
+            
+            for vertex in self.graph[element]:
+                in_degree[vertex]-=1
+                if in_degree[vertex] == 0:
+                    queue.append(vertex)
+        return topological_sort       
+            
 
 graph = Graph()
 graph.add_vertex('A')
@@ -67,6 +90,8 @@ print("DFS traversal : ")
 graph.dfs_trav('A')
 print("BFS traversal : ")
 graph.bfs_trav('A')
+print("Topological sort : ")
+print(graph.topological_sort())
                     
         
     
