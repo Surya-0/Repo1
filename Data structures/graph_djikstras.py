@@ -19,6 +19,16 @@ class Graph:
             distances[vertex]=float('inf')
         
         distances[source]=0
-        priority_queue = [(0,)]
+        priority_queue = [(0,source)]
+        while priority_queue:
+            pop_distance,pop_vertex = heapq.heappop(priority_queue)
+            for adjacent_vertex in self.graph[pop_vertex]:
+                new_distance = distances[pop_vertex]+self.weights[(pop_vertex,adjacent_vertex)]
+                
+                if  new_distance < distances[adjacent_vertex]:
+                    distances[adjacent_vertex] = new_distance
+                    heapq.heappush(priority_queue, (new_distance,adjacent_vertex))
+        return distances
+                
         
         
