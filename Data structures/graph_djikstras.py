@@ -29,6 +29,23 @@ class Graph:
                     distances[adjacent_vertex] = new_distance
                     heapq.heappush(priority_queue, (new_distance,adjacent_vertex))
         return distances
-                
+    
+    def prims(self,source):
+        visited = []
+        priority_queue = [(0,source,None)]
+        mst = []
+        
+        while priority_queue:
+            weight,pop_vertex,parent_vertex = heapq.heappop(priority_queue)
+            if pop_vertex not in visited:
+                visited.append(pop_vertex)
+            
+            if parent_vertex is not None:
+                mst.append((parent_vertex,pop_vertex,weight))
+            
+            for adjacent_vertex in self.graph[pop_vertex]:
+                if adjacent_vertex not in visited:
+                    heapq.push(priority_queue,(self.weights[pop_vertex,adjacent_vertex],adjacent_vertex,pop_vertex))
+        return mst
         
         
