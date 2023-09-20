@@ -1,6 +1,7 @@
 from socket import *
 serverPort = 12000
-serverSocket = socket(AF_INET,SOCK_STREAM)
+# AF_INET is the address family where the socket can communicate with the ipv4 addresses
+serverSocket = socket(AF_INET,SOCK_STREAM) # SOCK_STREAM indicates the socket is of TCP type
 serverSocket.bind(('',serverPort))
 serverSocket.listen(1)
 print ("The server is ready to receive")
