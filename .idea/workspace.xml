@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0549d53-206e-404b-a892-9d47a19739cc" name="Changes" comment="sd">
-      <change beforePath="$PROJECT_DIR$/Data structures/Graphsprac1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data structures/Graphsprac1.py" afterDir="false" />
-    </list>
+    <list default="true" id="b0549d53-206e-404b-a892-9d47a19739cc" name="Changes" comment="sd" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +29,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/surya/Documents/Surya/Git/Repo1"
+    "last_opened_file_path": "/Users/surya/Documents/Surya/Git/Repo1",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -50,7 +49,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694186940239</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="sd">
+      <created>1695675193045</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695675193045</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
