@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0549d53-206e-404b-a892-9d47a19739cc" name="Changes" comment="sd">
+      <change afterPath="$PROJECT_DIR$/Networks/tcpclientprac.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networks/tcpserverprac.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Networks/prac1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Networks/prac1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Networks/TCPServer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Networks/TCPServer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +36,18 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "/Users/surya/Documents/Surya/Git/Repo1",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Python"
+    ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Networks" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695675294372</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="sd">
+      <created>1695675945371</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695675945371</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
