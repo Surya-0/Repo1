@@ -6,15 +6,16 @@ class Huffman:
         self.right = None
 
 
-def huffman_tree_generator(data):
+def huffman_tree_generator(info):
     counter = {}
-    for i in data:
+    for i in info:
         if i in counter:
             counter[i] += 1
         else:
             counter[i] = 1
 
     nodes = [Huffman(symbol, frequency) for symbol, frequency in counter.items()]
+    print(counter)
     while len(nodes) > 1:
         nodes.sort(key=lambda x: x.frequency)
 
@@ -36,8 +37,8 @@ def build_huffman_code(node, current_code, huffman_codes):
     if node.symbol is not None:
         huffman_codes[node.symbol] = current_code
 
-    build_huffman_code(node.left, current_code + 0, huffman_codes)
-    build_huffman_code(node.right, current_code + 1, huffman_codes)
+    build_huffman_code(node.left, current_code + '0', huffman_codes)
+    build_huffman_code(node.right, current_code + '1', huffman_codes)
 
 
 def huffman_encoding(info):
