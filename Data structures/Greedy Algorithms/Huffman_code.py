@@ -81,5 +81,6 @@ encoded_data, huffman_tree = huffman_encoding(data)
 print("Encoded Data:", encoded_data)
 
 # Decoding
-decoded_data = huffman_decoding(encoded_data, huffman_tree)
+
+decoded_data = huffman_decoding('010101111111000101101', huffman_tree)
 print("Decoded Data:", decoded_data)
