@@ -1,5 +1,6 @@
 def jobs_sequencing(job_list, time):
     job_list.sort(key=lambda x: x[2], reverse=True)
+    print(job_list)
     free_time_slots = [False] * time
     jobs_performed = [-1] * time
     profit_count = 0
