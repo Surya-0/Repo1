@@ -31,8 +31,7 @@ class Graph:
         for node in range(self.vertices):
             parent.append(node)
             rank.append(0)
-        cheapest = [
-                       -1] * self.vertices  # an array to store the vertex u,v and the weight of the shortest connecting the vertices
+        cheapest = [-1] * self.vertices  # an array to store the vertex u,v and the weight of the shortest connecting the vertices
 
         while num_components > 1:
             for i in range(len(self.graph)):
