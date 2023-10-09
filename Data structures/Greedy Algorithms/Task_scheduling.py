@@ -11,7 +11,7 @@ def jobs_sequencing(job_list, time):
                 jobs_performed[j] = job_list[i][0]
                 profit_count += job_list[i][2]
                 break
-    return jobs_performed
+    return profit_count
 
 
 if __name__ == "__main__":
