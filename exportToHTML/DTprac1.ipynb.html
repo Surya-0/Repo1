@@ -1,0 +1,190 @@
+<html>
+<head>
+<title>DTprac1.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #cf8e6d;}
+.s2 { color: #bcbec4;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+DTprac1.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">#%% 
+</span><span class="s1">import </span><span class="s2">numpy </span><span class="s1">as </span><span class="s2">np</span>
+<span class="s1">import </span><span class="s2">matplotlib</span><span class="s3">.</span><span class="s2">pyplot </span><span class="s1">as </span><span class="s2">plt</span>
+<span class="s1">import </span><span class="s2">pandas </span><span class="s1">as </span><span class="s2">pd</span>
+
+<span class="s0">#%% 
+</span><span class="s2">df </span><span class="s3">= </span><span class="s2">pd</span><span class="s3">.</span><span class="s2">read_csv</span><span class="s3">(</span><span class="s4">'titanic.csv'</span><span class="s3">)</span>
+<span class="s2">df</span>
+<span class="s0">#%% 
+</span><span class="s1">import </span><span class="s2">seaborn </span><span class="s1">as </span><span class="s2">sns</span>
+<span class="s2">sns</span><span class="s3">.</span><span class="s2">pairplot</span><span class="s3">(</span><span class="s2">df</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">df</span><span class="s3">.</span><span class="s2">describe</span>
+<span class="s0">#%% 
+</span><span class="s2">df</span><span class="s3">.</span><span class="s2">describe</span><span class="s3">()</span>
+<span class="s0">#%% 
+</span><span class="s2">df</span><span class="s3">[</span><span class="s2">df</span><span class="s3">.</span><span class="s2">isnull</span><span class="s3">().</span><span class="s2">any</span><span class="s3">(</span><span class="s2">axis</span><span class="s3">=</span><span class="s5">1</span><span class="s3">)]</span>
+<span class="s0">#%% 
+</span><span class="s2">x </span><span class="s3">= </span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Age'</span><span class="s3">].</span><span class="s2">mean</span><span class="s3">()</span>
+<span class="s2">df</span><span class="s3">[</span><span class="s4">'Age'</span><span class="s3">].</span><span class="s2">fillna</span><span class="s3">(</span><span class="s2">x</span><span class="s3">,</span><span class="s2">inplace</span><span class="s3">=</span><span class="s1">True</span><span class="s3">)</span>
+<span class="s2">df</span>
+<span class="s0">#%% 
+</span><span class="s2">df</span><span class="s3">.</span><span class="s2">columns</span>
+<span class="s0">#%% 
+</span><span class="s2">print</span><span class="s3">(</span><span class="s2">df</span><span class="s3">.</span><span class="s2">isnull</span><span class="s3">().</span><span class="s2">sum</span><span class="s3">())</span>
+<span class="s0">#%% 
+</span><span class="s2">df</span><span class="s3">.</span><span class="s2">shape</span>
+<span class="s0">#%% 
+</span><span class="s2">df </span><span class="s3">= </span><span class="s2">df</span><span class="s3">.</span><span class="s2">drop</span><span class="s3">(</span><span class="s2">columns</span><span class="s3">=[</span><span class="s4">'Cabin'</span><span class="s3">])</span>
+<span class="s0">#%% 
+</span><span class="s2">df</span><span class="s3">.</span><span class="s2">isnull</span><span class="s3">().</span><span class="s2">sum</span><span class="s3">()</span>
+<span class="s0">#%% 
+</span><span class="s2">df</span><span class="s3">.</span><span class="s2">dropna</span><span class="s3">()</span>
+<span class="s0">#%% 
+</span><span class="s2">df</span><span class="s3">.</span><span class="s2">isnull</span><span class="s3">().</span><span class="s2">sum</span><span class="s3">()</span>
+<span class="s0">#%% 
+</span><span class="s1">import </span><span class="s2">seaborn </span><span class="s1">as </span><span class="s2">sns</span>
+<span class="s2">sns</span><span class="s3">.</span><span class="s2">boxplot</span><span class="s3">(</span><span class="s2">df</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">sns</span><span class="s3">.</span><span class="s2">boxplot</span><span class="s3">(</span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Fare'</span><span class="s3">])</span>
+<span class="s0">#%% 
+</span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Fare'</span><span class="s3">].</span><span class="s2">describe</span><span class="s3">()</span>
+<span class="s0">#%% 
+</span><span class="s2">Q1 </span><span class="s3">= </span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Fare'</span><span class="s3">].</span><span class="s2">quantile</span><span class="s3">(</span><span class="s5">0.25</span><span class="s3">)</span>
+<span class="s2">Q3 </span><span class="s3">= </span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Fare'</span><span class="s3">].</span><span class="s2">quantile</span><span class="s3">(</span><span class="s5">0.75</span><span class="s3">)</span>
+<span class="s2">IQR </span><span class="s3">= </span><span class="s2">Q3 </span><span class="s3">- </span><span class="s2">Q1</span>
+<span class="s2">whisker </span><span class="s3">= </span><span class="s2">IQR </span><span class="s3">* </span><span class="s5">1.5</span>
+<span class="s2">lower_bound </span><span class="s3">= </span><span class="s2">Q1 </span><span class="s3">- </span><span class="s2">whisker</span>
+<span class="s2">upper_bound </span><span class="s3">= </span><span class="s2">Q3 </span><span class="s3">+ </span><span class="s2">whisker</span>
+<span class="s2">outliers </span><span class="s3">= </span><span class="s2">df</span><span class="s3">[(</span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Fare'</span><span class="s3">] &lt; </span><span class="s2">lower_bound</span><span class="s3">)|(</span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Fare'</span><span class="s3">] &gt; </span><span class="s2">upper_bound</span><span class="s3">)]</span>
+<span class="s0">#%% 
+</span><span class="s2">print</span><span class="s3">(</span><span class="s2">type</span><span class="s3">(</span><span class="s2">outliers</span><span class="s3">))</span>
+<span class="s0">#%% 
+</span><span class="s2">outliers</span>
+<span class="s0">#%% 
+</span><span class="s2">df </span><span class="s3">= </span><span class="s2">df</span><span class="s3">[(</span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Fare'</span><span class="s3">]&gt;=</span><span class="s2">lower_bound</span><span class="s3">) &amp; (</span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Fare'</span><span class="s3">]&lt;=</span><span class="s2">upper_bound</span><span class="s3">)]</span>
+<span class="s0">#%% 
+</span><span class="s2">df</span>
+<span class="s0">#%% 
+</span><span class="s2">df </span><span class="s3">= </span><span class="s2">df</span><span class="s3">.</span><span class="s2">drop</span><span class="s3">(</span><span class="s2">columns</span><span class="s3">=[</span><span class="s4">'Name'</span><span class="s3">])</span>
+<span class="s0">#%% 
+</span><span class="s1">from </span><span class="s2">sklearn</span><span class="s3">.</span><span class="s2">preprocessing </span><span class="s1">import </span><span class="s2">LabelEncoder</span>
+<span class="s2">le </span><span class="s3">= </span><span class="s2">LabelEncoder</span><span class="s3">()</span>
+<span class="s2">df</span><span class="s3">[</span><span class="s4">'Sex'</span><span class="s3">] = </span><span class="s2">le</span><span class="s3">.</span><span class="s2">fit_transform</span><span class="s3">(</span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Sex'</span><span class="s3">])</span>
+
+<span class="s0">#%% 
+</span><span class="s2">df</span>
+<span class="s0">#%% 
+</span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Embarked'</span><span class="s3">] = </span><span class="s2">le</span><span class="s3">.</span><span class="s2">fit_transform</span><span class="s3">(</span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Embarked'</span><span class="s3">])</span>
+<span class="s2">df</span>
+<span class="s0">#%% 
+</span><span class="s2">df </span><span class="s3">= </span><span class="s2">df</span><span class="s3">.</span><span class="s2">drop</span><span class="s3">(</span><span class="s2">columns</span><span class="s3">=[</span><span class="s4">'Ticket'</span><span class="s3">])</span>
+<span class="s0">#%% 
+</span><span class="s2">df</span>
+<span class="s0">#%% 
+</span><span class="s2">q1 </span><span class="s3">= </span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Age'</span><span class="s3">].</span><span class="s2">quantile</span><span class="s3">(</span><span class="s5">0.25</span><span class="s3">)</span>
+<span class="s2">q3 </span><span class="s3">= </span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Age'</span><span class="s3">].</span><span class="s2">quantile</span><span class="s3">(</span><span class="s5">0.75</span><span class="s3">)</span>
+<span class="s2">IQR </span><span class="s3">= </span><span class="s2">q3 </span><span class="s3">- </span><span class="s2">q1</span>
+<span class="s2">lower_bound </span><span class="s3">= </span><span class="s2">q1 </span><span class="s3">- </span><span class="s2">IQR</span>
+<span class="s2">upper_bound </span><span class="s3">= </span><span class="s2">q3 </span><span class="s3">+ </span><span class="s2">IQR</span>
+<span class="s2">df </span><span class="s3">= </span><span class="s2">df</span><span class="s3">[(</span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Age'</span><span class="s3">]&gt;= </span><span class="s2">lower_bound</span><span class="s3">) &amp; (</span><span class="s2">df</span><span class="s3">[</span><span class="s4">'Age'</span><span class="s3">]&lt; </span><span class="s2">upper_bound</span><span class="s3">)]</span>
+<span class="s0">#%% 
+</span><span class="s2">y </span><span class="s3">= </span><span class="s2">df</span><span class="s3">.</span><span class="s2">iloc</span><span class="s3">[:,</span><span class="s5">1</span><span class="s3">].</span><span class="s2">values</span>
+<span class="s0">#%% 
+</span><span class="s2">df </span><span class="s3">= </span><span class="s2">df</span><span class="s3">.</span><span class="s2">drop</span><span class="s3">(</span><span class="s2">columns</span><span class="s3">=[</span><span class="s4">'Survived'</span><span class="s3">])</span>
+<span class="s0">#%% 
+</span><span class="s2">df</span>
+<span class="s0">#%% 
+</span><span class="s2">sns</span><span class="s3">.</span><span class="s2">boxplot</span><span class="s3">(</span><span class="s2">df</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">X </span><span class="s3">= </span><span class="s2">df</span><span class="s3">.</span><span class="s2">iloc</span><span class="s3">[:,:].</span><span class="s2">values</span>
+<span class="s0">#%% 
+</span><span class="s2">print</span><span class="s3">(</span><span class="s2">type</span><span class="s3">(</span><span class="s2">X</span><span class="s3">))</span>
+<span class="s0">#%% 
+</span><span class="s2">X</span>
+<span class="s0">#%% 
+</span><span class="s2">print</span><span class="s3">(</span><span class="s2">type</span><span class="s3">(</span><span class="s2">y</span><span class="s3">))</span>
+<span class="s0">#%% 
+</span><span class="s2">y</span>
+<span class="s0">#%% 
+</span><span class="s1">from </span><span class="s2">sklearn</span><span class="s3">.</span><span class="s2">model_selection </span><span class="s1">import  </span><span class="s2">train_test_split</span>
+<span class="s2">X_train</span><span class="s3">,</span><span class="s2">X_test</span><span class="s3">,</span><span class="s2">y_train</span><span class="s3">,</span><span class="s2">y_test </span><span class="s3">= </span><span class="s2">train_test_split</span><span class="s3">(</span><span class="s2">X</span><span class="s3">,</span><span class="s2">y</span><span class="s3">,</span><span class="s2">test_size</span><span class="s3">=</span><span class="s5">0.2</span><span class="s3">,</span><span class="s2">random_state</span><span class="s3">=</span><span class="s5">42</span><span class="s3">)</span>
+
+<span class="s0">#%% 
+</span><span class="s1">from </span><span class="s2">sklearn</span><span class="s3">.</span><span class="s2">tree </span><span class="s1">import </span><span class="s2">DecisionTreeClassifier</span>
+<span class="s2">model </span><span class="s3">= </span><span class="s2">DecisionTreeClassifier</span><span class="s3">(</span><span class="s2">criterion</span><span class="s3">=</span><span class="s4">'entropy'</span><span class="s3">)</span>
+
+<span class="s0">#%% 
+</span><span class="s2">model</span><span class="s3">.</span><span class="s2">fit</span><span class="s3">(</span><span class="s2">X_train</span><span class="s3">,</span><span class="s2">y_train</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">y_pred </span><span class="s3">= </span><span class="s2">model</span><span class="s3">.</span><span class="s2">predict</span><span class="s3">(</span><span class="s2">X_test</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">print</span><span class="s3">(</span><span class="s2">y_test</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">print</span><span class="s3">(</span><span class="s2">y_pred</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s1">from </span><span class="s2">sklearn</span><span class="s3">.</span><span class="s2">metrics </span><span class="s1">import </span><span class="s2">confusion_matrix</span>
+<span class="s2">cm </span><span class="s3">= </span><span class="s2">confusion_matrix</span><span class="s3">(</span><span class="s2">y_test</span><span class="s3">,</span><span class="s2">y_pred</span><span class="s3">)</span>
+<span class="s2">print</span><span class="s3">(</span><span class="s2">cm</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s1">from </span><span class="s2">sklearn</span><span class="s3">.</span><span class="s2">metrics </span><span class="s1">import </span><span class="s2">accuracy_score</span><span class="s3">,</span><span class="s2">recall_score</span><span class="s3">,</span><span class="s2">precision_score</span><span class="s3">,</span><span class="s2">f1_score</span>
+<span class="s2">acc </span><span class="s3">= </span><span class="s2">accuracy_score</span><span class="s3">(</span><span class="s2">y_test</span><span class="s3">,</span><span class="s2">y_pred</span><span class="s3">)</span>
+<span class="s2">print</span><span class="s3">(</span><span class="s2">acc</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">sns</span><span class="s3">.</span><span class="s2">boxplot</span><span class="s3">(</span><span class="s2">df</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">model</span><span class="s3">.</span><span class="s2">score</span><span class="s3">(</span><span class="s2">X_test</span><span class="s3">,</span><span class="s2">y_test</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">plt</span><span class="s3">.</span><span class="s2">figure</span><span class="s3">(</span><span class="s2">figsize</span><span class="s3">=(</span><span class="s5">12</span><span class="s3">,</span><span class="s5">8</span><span class="s3">))</span>
+<span class="s1">from </span><span class="s2">sklearn </span><span class="s1">import </span><span class="s2">tree</span>
+<span class="s2">tree</span><span class="s3">.</span><span class="s2">plot_tree</span><span class="s3">(</span><span class="s2">model</span><span class="s3">.</span><span class="s2">fit</span><span class="s3">(</span><span class="s2">X_train</span><span class="s3">,</span><span class="s2">y_train</span><span class="s3">))</span>
+<span class="s0">#%% 
+</span><span class="s1">from </span><span class="s2">sklearn</span><span class="s3">.</span><span class="s2">datasets </span><span class="s1">import </span><span class="s2">load_iris</span>
+
+<span class="s0">#%% 
+</span><span class="s2">data </span><span class="s3">= </span><span class="s2">load_iris</span><span class="s3">()</span>
+<span class="s2">x </span><span class="s3">= </span><span class="s2">data</span><span class="s3">.</span><span class="s2">data</span>
+<span class="s2">y </span><span class="s3">= </span><span class="s2">data</span><span class="s3">.</span><span class="s2">target</span>
+
+<span class="s0">#%% 
+</span><span class="s2">x</span>
+<span class="s0">#%% 
+</span><span class="s2">y</span>
+<span class="s0">#%% 
+</span><span class="s1">from </span><span class="s2">sklearn</span><span class="s3">.</span><span class="s2">model_selection </span><span class="s1">import </span><span class="s2">train_test_split</span>
+<span class="s2">X_train</span><span class="s3">,</span><span class="s2">X_test</span><span class="s3">,</span><span class="s2">y_train</span><span class="s3">,</span><span class="s2">y_test </span><span class="s3">= </span><span class="s2">train_test_split</span><span class="s3">(</span><span class="s2">x</span><span class="s3">,</span><span class="s2">y</span><span class="s3">,</span><span class="s2">test_size</span><span class="s3">=</span><span class="s5">0.2</span><span class="s3">,</span><span class="s2">random_state</span><span class="s3">=</span><span class="s5">42</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">X_train</span>
+<span class="s0">#%% 
+</span><span class="s1">from </span><span class="s2">sklearn</span><span class="s3">.</span><span class="s2">tree </span><span class="s1">import </span><span class="s2">DecisionTreeClassifier</span>
+<span class="s2">dt </span><span class="s3">= </span><span class="s2">DecisionTreeClassifier</span><span class="s3">(</span><span class="s2">criterion</span><span class="s3">=</span><span class="s4">'entropy'</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">dt</span><span class="s3">.</span><span class="s2">fit</span><span class="s3">(</span><span class="s2">X_train</span><span class="s3">,</span><span class="s2">y_train</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">y_pred </span><span class="s3">= </span><span class="s2">dt</span><span class="s3">.</span><span class="s2">predict</span><span class="s3">(</span><span class="s2">X_test</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">y_pred</span>
+<span class="s0">#%% 
+</span><span class="s2">dt</span><span class="s3">.</span><span class="s2">score</span><span class="s3">(</span><span class="s2">X_test</span><span class="s3">,</span><span class="s2">y_test</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s1">from </span><span class="s2">sklearn </span><span class="s1">import </span><span class="s2">tree</span>
+<span class="s2">tree</span><span class="s3">.</span><span class="s2">plot_tree</span><span class="s3">(</span><span class="s2">dt</span><span class="s3">.</span><span class="s2">fit</span><span class="s3">(</span><span class="s2">X_train</span><span class="s3">,</span><span class="s2">y_train</span><span class="s3">))</span>
+<span class="s0">#%% 
+</span><span class="s1">from </span><span class="s2">sklearn</span><span class="s3">.</span><span class="s2">metrics </span><span class="s1">import  </span><span class="s2">confusion_matrix</span>
+<span class="s2">cm </span><span class="s3">= </span><span class="s2">confusion_matrix</span><span class="s3">(</span><span class="s2">y_test</span><span class="s3">,</span><span class="s2">y_pred</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">cm</span>
+<span class="s0">#%% 
+</span></pre>
+</body>
+</html>
