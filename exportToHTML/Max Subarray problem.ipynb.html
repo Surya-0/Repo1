@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>Max Subarray problem.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #cf8e6d;}
+.s2 { color: #bcbec4;}
+.s3 { color: #bcbec4;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Max Subarray problem.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">#%% 
+</span><span class="s1">import </span><span class="s2">random</span>
+<span class="s1">import </span><span class="s2">matplotlib</span><span class="s3">.</span><span class="s2">pyplot </span><span class="s1">as </span><span class="s2">plt</span>
+<span class="s1">import </span><span class="s2">time</span>
+
+<span class="s0">#%% md 
+</span><span class="s2">## Dynamic Programming 
+</span><span class="s0">#%% 
+</span>
+<span class="s1">def </span><span class="s2">kadane</span><span class="s3">(</span><span class="s2">arr</span><span class="s3">):</span>
+    <span class="s2">m </span><span class="s3">= </span><span class="s2">len</span><span class="s3">(</span><span class="s2">arr</span><span class="s3">)</span>
+    <span class="s2">local_max </span><span class="s3">= </span><span class="s4">0</span>
+    <span class="s2">global_max </span><span class="s3">= -</span><span class="s2">float</span><span class="s3">(</span><span class="s5">'inf'</span><span class="s3">)</span>
+    <span class="s1">for </span><span class="s2">i </span><span class="s1">in </span><span class="s2">range</span><span class="s3">(</span><span class="s4">0</span><span class="s3">, </span><span class="s2">m</span><span class="s3">):</span>
+        <span class="s2">local_max </span><span class="s3">= </span><span class="s2">max</span><span class="s3">(</span><span class="s2">arr</span><span class="s3">[</span><span class="s2">i</span><span class="s3">], </span><span class="s2">arr</span><span class="s3">[</span><span class="s2">i</span><span class="s3">] + </span><span class="s2">local_max</span><span class="s3">)</span>
+        <span class="s1">if </span><span class="s2">local_max </span><span class="s3">&gt; </span><span class="s2">global_max</span><span class="s3">:</span>
+            <span class="s2">global_max </span><span class="s3">= </span><span class="s2">local_max</span>
+    <span class="s1">return </span><span class="s2">global_max</span>
+
+<span class="s0"># %%</span>
+
+<span class="s0">#%% md 
+</span><span class="s2">## Divide and Conquer 
+</span><span class="s0">#%% 
+</span><span class="s1">def </span><span class="s2">maxCrossingSum</span><span class="s3">(</span><span class="s2">arr</span><span class="s3">, </span><span class="s2">low</span><span class="s3">, </span><span class="s2">mid</span><span class="s3">, </span><span class="s2">high</span><span class="s3">):</span>
+    <span class="s2">sum </span><span class="s3">= </span><span class="s4">0</span>
+    <span class="s2">left_sum </span><span class="s3">= </span><span class="s2">float</span><span class="s3">(</span><span class="s5">&quot;-inf&quot;</span><span class="s3">)</span>
+    <span class="s1">for </span><span class="s2">i </span><span class="s1">in </span><span class="s2">range</span><span class="s3">(</span><span class="s2">mid</span><span class="s3">, </span><span class="s2">low</span><span class="s3">-</span><span class="s4">1</span><span class="s3">, -</span><span class="s4">1</span><span class="s3">):</span>
+        <span class="s2">sum </span><span class="s3">+= </span><span class="s2">arr</span><span class="s3">[</span><span class="s2">i</span><span class="s3">]</span>
+
+        <span class="s1">if </span><span class="s2">sum </span><span class="s3">&gt; </span><span class="s2">left_sum</span><span class="s3">:</span>
+            <span class="s2">left_sum </span><span class="s3">= </span><span class="s2">sum</span>
+
+    <span class="s2">sum </span><span class="s3">= </span><span class="s4">0</span>
+    <span class="s2">right_sum </span><span class="s3">= </span><span class="s2">float</span><span class="s3">(</span><span class="s5">&quot;-inf&quot;</span><span class="s3">)</span>
+    <span class="s1">for </span><span class="s2">i </span><span class="s1">in </span><span class="s2">range</span><span class="s3">(</span><span class="s2">mid</span><span class="s3">, </span><span class="s2">high</span><span class="s3">+</span><span class="s4">1</span><span class="s3">, </span><span class="s4">1</span><span class="s3">):</span>
+        <span class="s2">sum </span><span class="s3">+= </span><span class="s2">arr</span><span class="s3">[</span><span class="s2">i</span><span class="s3">]</span>
+
+        <span class="s1">if </span><span class="s2">sum </span><span class="s3">&gt; </span><span class="s2">right_sum</span><span class="s3">:</span>
+            <span class="s2">right_sum </span><span class="s3">= </span><span class="s2">sum</span>
+
+    <span class="s1">return </span><span class="s2">max</span><span class="s3">(</span>
+        <span class="s2">left_sum</span><span class="s3">,</span>
+        <span class="s2">right_sum</span><span class="s3">,</span>
+        <span class="s2">left_sum </span><span class="s3">+ </span><span class="s2">right_sum </span><span class="s3">- </span><span class="s2">arr</span><span class="s3">[</span><span class="s2">mid</span><span class="s3">]</span>
+    <span class="s3">)</span>
+
+<span class="s1">def </span><span class="s2">maxSubarraySum</span><span class="s3">(</span><span class="s2">arr</span><span class="s3">, </span><span class="s2">low</span><span class="s3">, </span><span class="s2">high</span><span class="s3">):</span>
+    <span class="s2">max_val </span><span class="s3">= </span><span class="s2">float</span><span class="s3">(</span><span class="s5">&quot;-inf&quot;</span><span class="s3">)</span>
+    <span class="s1">if </span><span class="s2">low </span><span class="s3">&gt; </span><span class="s2">high</span><span class="s3">:</span>
+        <span class="s1">return </span><span class="s2">max_val</span>
+    <span class="s1">if </span><span class="s2">low </span><span class="s3">== </span><span class="s2">high</span><span class="s3">:</span>
+        <span class="s1">return </span><span class="s2">arr</span><span class="s3">[</span><span class="s2">low</span><span class="s3">]</span>
+    <span class="s2">mid </span><span class="s3">= (</span><span class="s2">low </span><span class="s3">+ </span><span class="s2">high</span><span class="s3">) // </span><span class="s4">2</span>
+
+    <span class="s1">return </span><span class="s2">max</span><span class="s3">(</span>
+        <span class="s2">maxSubarraySum</span><span class="s3">(</span><span class="s2">arr</span><span class="s3">, </span><span class="s2">low</span><span class="s3">, </span><span class="s2">mid</span><span class="s3">-</span><span class="s4">1</span><span class="s3">),</span>
+        <span class="s2">maxSubarraySum</span><span class="s3">(</span><span class="s2">arr</span><span class="s3">, </span><span class="s2">mid</span><span class="s3">+</span><span class="s4">1</span><span class="s3">, </span><span class="s2">high</span><span class="s3">),</span>
+        <span class="s2">maxCrossingSum</span><span class="s3">(</span><span class="s2">arr</span><span class="s3">, </span><span class="s2">low</span><span class="s3">, </span><span class="s2">mid</span><span class="s3">, </span><span class="s2">high</span><span class="s3">)</span>
+    <span class="s3">)</span>
+
+
+
+<span class="s0">#%% md 
+</span><span class="s2">## Main 
+</span><span class="s0">#%% 
+</span><span class="s1">if </span><span class="s2">__name__ </span><span class="s3">== </span><span class="s5">'__main__'</span><span class="s3">:</span>
+    <span class="s2">time_arr_dp </span><span class="s3">= []</span>
+    <span class="s2">time_arr_dc </span><span class="s3">= []</span>
+    <span class="s1">for </span><span class="s2">j </span><span class="s1">in </span><span class="s2">range</span><span class="s3">(</span><span class="s4">10</span><span class="s3">):</span>
+        <span class="s2">M </span><span class="s3">= [</span><span class="s2">random</span><span class="s3">.</span><span class="s2">randint</span><span class="s3">(-</span><span class="s4">6000</span><span class="s3">, </span><span class="s4">6000</span><span class="s3">) </span><span class="s1">for </span><span class="s2">i </span><span class="s1">in </span><span class="s2">range</span><span class="s3">(</span><span class="s4">10000</span><span class="s3">)]</span>
+        <span class="s0"># Dynamic Programming</span>
+        <span class="s2">start_time </span><span class="s3">= </span><span class="s2">time</span><span class="s3">.</span><span class="s2">time</span><span class="s3">()</span>
+        <span class="s2">max_subarray_large </span><span class="s3">= </span><span class="s2">kadane</span><span class="s3">(</span><span class="s2">M</span><span class="s3">)</span>
+        <span class="s2">end_time </span><span class="s3">= </span><span class="s2">time</span><span class="s3">.</span><span class="s2">time</span><span class="s3">()</span>
+        <span class="s2">time_arr_dp</span><span class="s3">.</span><span class="s2">append</span><span class="s3">(</span><span class="s2">end_time </span><span class="s3">- </span><span class="s2">start_time</span><span class="s3">)</span>
+        <span class="s0"># Divide and Conquer</span>
+        <span class="s2">start_time </span><span class="s3">= </span><span class="s2">time</span><span class="s3">.</span><span class="s2">time</span><span class="s3">()</span>
+        <span class="s2">dc_max </span><span class="s3">= </span><span class="s2">maxSubarraySum</span><span class="s3">(</span><span class="s2">M</span><span class="s3">,</span><span class="s4">0</span><span class="s3">,</span><span class="s2">len</span><span class="s3">(</span><span class="s2">M</span><span class="s3">)-</span><span class="s4">1</span><span class="s3">)</span>
+        <span class="s2">end_time </span><span class="s3">= </span><span class="s2">time</span><span class="s3">.</span><span class="s2">time</span><span class="s3">()</span>
+        <span class="s2">time_arr_dc</span><span class="s3">.</span><span class="s2">append</span><span class="s3">(</span><span class="s2">end_time </span><span class="s3">- </span><span class="s2">start_time</span><span class="s3">)</span>
+    <span class="s2">plt</span><span class="s3">.</span><span class="s2">plot</span><span class="s3">(</span><span class="s2">time_arr_dp</span><span class="s3">,</span><span class="s2">color </span><span class="s3">= </span><span class="s5">&quot;red&quot;</span><span class="s3">,</span><span class="s2">linestyle </span><span class="s3">= </span><span class="s5">&quot;-&quot;</span><span class="s3">,</span><span class="s2">marker </span><span class="s3">= </span><span class="s5">&quot;o&quot;</span><span class="s3">,</span><span class="s2">label </span><span class="s3">= </span><span class="s5">&quot;Dynamic Programming&quot;</span><span class="s3">)</span>
+    <span class="s2">plt</span><span class="s3">.</span><span class="s2">plot</span><span class="s3">(</span><span class="s2">time_arr_dc</span><span class="s3">,</span><span class="s2">color</span><span class="s3">=</span><span class="s5">&quot;blue&quot;</span><span class="s3">,</span><span class="s2">linestyle </span><span class="s3">= </span><span class="s5">&quot;--&quot;</span><span class="s3">,</span><span class="s2">marker</span><span class="s3">=</span><span class="s5">&quot;s&quot;</span><span class="s3">,</span><span class="s2">label </span><span class="s3">= </span><span class="s5">&quot;Divide and Conquer&quot;</span><span class="s3">)</span>
+    <span class="s2">plt</span><span class="s3">.</span><span class="s2">xlabel</span><span class="s3">(</span><span class="s5">&quot;iterations&quot;</span><span class="s3">)</span>
+    <span class="s2">plt</span><span class="s3">.</span><span class="s2">ylabel</span><span class="s3">(</span><span class="s5">&quot;time taken&quot;</span><span class="s3">)</span>
+    <span class="s2">plt</span><span class="s3">.</span><span class="s2">legend</span><span class="s3">()</span>
+    <span class="s2">plt</span><span class="s3">.</span><span class="s2">show</span><span class="s3">()</span>
+
+<span class="s0">#%% 
+</span></pre>
+</body>
+</html>
