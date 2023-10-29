@@ -272,5 +272,7 @@ print(cm)
 print(ac)
 
 from joblib import dump,load
-dump(trees,'RandomForestClassifier1.joblib')
+dump(trees,'RandomForestClassifier2')
 
+
+#%%
