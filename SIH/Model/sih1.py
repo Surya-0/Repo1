@@ -1,14 +1,16 @@
+from sympy import true, false
+
 {
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 88,
+   "execution_count": 1,
    "id": "initial_id",
    "metadata": {
     "collapsed": true,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:27.040563Z",
-     "start_time": "2023-10-29T11:49:26.956613Z"
+     "end_time": "2023-10-29T06:58:18.888233Z",
+     "start_time": "2023-10-29T06:58:18.023449Z"
     }
    },
    "outputs": [],
@@ -20,14 +22,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 89,
+   "execution_count": 2,
    "outputs": [
     {
      "data": {
       "text/plain": "        crop  moisture  temp  pump\n0     cotton       758    45     0\n1     cotton       996    20     1\n2     cotton       395    45     1\n3     cotton       798    45     1\n4     cotton       713    19     1\n...      ...       ...   ...   ...\n4995  cotton       846    45     1\n4996  cotton      1013    33     0\n4997  cotton       570    24     0\n4998  cotton      1008    13     1\n4999  cotton       971    26     1\n\n[5000 rows x 4 columns]",
       "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>crop</th>\n      <th>moisture</th>\n      <th>temp</th>\n      <th>pump</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>cotton</td>\n      <td>758</td>\n      <td>45</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>cotton</td>\n      <td>996</td>\n      <td>20</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>cotton</td>\n      <td>395</td>\n      <td>45</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>cotton</td>\n      <td>798</td>\n      <td>45</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>cotton</td>\n      <td>713</td>\n      <td>19</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>...</th>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n    </tr>\n    <tr>\n      <th>4995</th>\n      <td>cotton</td>\n      <td>846</td>\n      <td>45</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>4996</th>\n      <td>cotton</td>\n      <td>1013</td>\n      <td>33</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>4997</th>\n      <td>cotton</td>\n      <td>570</td>\n      <td>24</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>4998</th>\n      <td>cotton</td>\n      <td>1008</td>\n      <td>13</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>4999</th>\n      <td>cotton</td>\n      <td>971</td>\n      <td>26</td>\n      <td>1</td>\n    </tr>\n  </tbody>\n</table>\n<p>5000 rows × 4 columns</p>\n</div>"
      },
-     "execution_count": 89,
+     "execution_count": 2,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -39,21 +41,21 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:27.041906Z",
-     "start_time": "2023-10-29T11:49:26.963177Z"
+     "end_time": "2023-10-29T06:58:18.898639Z",
+     "start_time": "2023-10-29T06:58:18.888586Z"
     }
    },
    "id": "5a15350d5315141a"
   },
   {
    "cell_type": "code",
-   "execution_count": 90,
+   "execution_count": 3,
    "outputs": [
     {
      "data": {
       "text/plain": "1    3501\n0    1499\nName: pump, dtype: int64"
      },
-     "execution_count": 90,
+     "execution_count": 3,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -64,15 +66,15 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:27.045224Z",
-     "start_time": "2023-10-29T11:49:26.999658Z"
+     "end_time": "2023-10-29T06:58:18.902802Z",
+     "start_time": "2023-10-29T06:58:18.900362Z"
     }
    },
    "id": "191ca5388f6cf994"
   },
   {
    "cell_type": "code",
-   "execution_count": 91,
+   "execution_count": 4,
    "outputs": [],
    "source": [
     "df = df.drop(columns=['crop'])"
@@ -80,22 +82,22 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:27.045270Z",
-     "start_time": "2023-10-29T11:49:27.003789Z"
+     "end_time": "2023-10-29T06:58:18.905533Z",
+     "start_time": "2023-10-29T06:58:18.903809Z"
     }
    },
    "id": "70a0bb0004bb12f8"
   },
   {
    "cell_type": "code",
-   "execution_count": 92,
+   "execution_count": 5,
    "outputs": [
     {
      "data": {
       "text/plain": "      moisture  temp  pump\n0          758    45     0\n1          996    20     1\n2          395    45     1\n3          798    45     1\n4          713    19     1\n...        ...   ...   ...\n4995       846    45     1\n4996      1013    33     0\n4997       570    24     0\n4998      1008    13     1\n4999       971    26     1\n\n[5000 rows x 3 columns]",
       "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>moisture</th>\n      <th>temp</th>\n      <th>pump</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>758</td>\n      <td>45</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>996</td>\n      <td>20</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>395</td>\n      <td>45</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>798</td>\n      <td>45</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>713</td>\n      <td>19</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>...</th>\n      <td>...</td>\n      <td>...</td>\n      <td>...</td>\n    </tr>\n    <tr>\n      <th>4995</th>\n      <td>846</td>\n      <td>45</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>4996</th>\n      <td>1013</td>\n      <td>33</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>4997</th>\n      <td>570</td>\n      <td>24</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>4998</th>\n      <td>1008</td>\n      <td>13</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>4999</th>\n      <td>971</td>\n      <td>26</td>\n      <td>1</td>\n    </tr>\n  </tbody>\n</table>\n<p>5000 rows × 3 columns</p>\n</div>"
      },
-     "execution_count": 92,
+     "execution_count": 5,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -106,15 +108,15 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:27.046355Z",
-     "start_time": "2023-10-29T11:49:27.007708Z"
+     "end_time": "2023-10-29T06:58:18.919710Z",
+     "start_time": "2023-10-29T06:58:18.907625Z"
     }
    },
    "id": "a3e971f97cfd38f9"
   },
   {
    "cell_type": "code",
-   "execution_count": 93,
+   "execution_count": 6,
    "outputs": [],
    "source": [
     "\n",
@@ -124,38 +126,39 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:27.046402Z",
-     "start_time": "2023-10-29T11:49:27.011265Z"
+     "end_time": "2023-10-29T06:58:18.920007Z",
+     "start_time": "2023-10-29T06:58:18.911843Z"
     }
    },
    "id": "aeb1f7955a3e903c"
   },
   {
    "cell_type": "code",
-   "execution_count": 94,
+   "execution_count": 7,
    "outputs": [],
    "source": [
     "from sklearn.model_selection import train_test_split\n",
+    "from sklearn.linear_model import LogisticRegression\n",
     "X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.20,random_state=42)"
    ],
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:27.046510Z",
-     "start_time": "2023-10-29T11:49:27.018423Z"
+     "end_time": "2023-10-29T06:58:19.556593Z",
+     "start_time": "2023-10-29T06:58:18.914511Z"
     }
    },
    "id": "98b0d9262214703c"
   },
   {
    "cell_type": "code",
-   "execution_count": 95,
+   "execution_count": 8,
    "outputs": [
     {
      "data": {
       "text/plain": "array([[1022,   23],\n       [   4,   26],\n       [ 909,   29],\n       ...,\n       [ 869,   16],\n       [   4,   44],\n       [1022,   35]])"
      },
-     "execution_count": 95,
+     "execution_count": 8,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -166,21 +169,21 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:27.046593Z",
-     "start_time": "2023-10-29T11:49:27.022389Z"
+     "end_time": "2023-10-29T06:58:19.561146Z",
+     "start_time": "2023-10-29T06:58:19.557223Z"
     }
    },
    "id": "90da21ce3bbcba1b"
   },
   {
    "cell_type": "code",
-   "execution_count": 96,
+   "execution_count": 9,
    "outputs": [
     {
      "data": {
       "text/plain": "array([1, 0, 1, ..., 1, 1, 1])"
      },
-     "execution_count": 96,
+     "execution_count": 9,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -191,15 +194,15 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:27.046659Z",
-     "start_time": "2023-10-29T11:49:27.025265Z"
+     "end_time": "2023-10-29T06:58:19.562739Z",
+     "start_time": "2023-10-29T06:58:19.559877Z"
     }
    },
    "id": "7e772041dda36f33"
   },
   {
    "cell_type": "code",
-   "execution_count": 97,
+   "execution_count": 10,
    "outputs": [],
    "source": [
     "class Perceptron_RMSProp_BCE:\n",
@@ -239,29 +242,33 @@
     "            self.weights -= (self.learning_rate / (np.sqrt(self.moving_avg_sq_w + self.epsilon))) * dw\n",
     "            self.bias -= (self.learning_rate / (np.sqrt(self.moving_avg_sq_b + self.epsilon))) * db\n",
     "\n",
-    "    def test(self, X):\n",
+    "    def test(self, X, y):\n",
     "        Y_predtest = self.predicted(X)\n",
     "        Y_values = Y_predtest\n",
     "        correct = 0\n",
+    "        total = len(y)\n",
     "        for i in range(len(Y_predtest)):\n",
     "            if Y_predtest[i] > 0.5:\n",
     "                Y_predtest[i] = 1\n",
     "            else:\n",
     "                Y_predtest[i] = 0\n",
+    "        for i in range(len(y)):\n",
+    "            if y[i] == Y_predtest[i]:\n",
+    "                correct += 1\n",
     "        return Y_predtest\n"
    ],
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:27.046779Z",
-     "start_time": "2023-10-29T11:49:27.030677Z"
+     "end_time": "2023-10-29T06:58:19.568929Z",
+     "start_time": "2023-10-29T06:58:19.565223Z"
     }
    },
    "id": "d7b47f7233846f7c"
   },
   {
    "cell_type": "code",
-   "execution_count": 98,
+   "execution_count": 11,
    "outputs": [],
    "source": [
     "class Perceptron_RMSProp_RMSE:\n",
@@ -313,29 +320,33 @@
     "            self.weights -= (self.learning_rate / (np.sqrt(self.moving_avg_sq_w + self.epsilon))) * dw\n",
     "            self.bias -= (self.learning_rate / (np.sqrt(self.moving_avg_sq_b + self.epsilon))) * db\n",
     "\n",
-    "    def test(self, X):\n",
+    "    def test(self, X, y):\n",
     "        Y_predtest = self.predicted(X)\n",
     "        Y_values = Y_predtest\n",
     "        correct = 0\n",
+    "        total = len(y)\n",
     "        for i in range(len(Y_predtest)):\n",
     "            if Y_predtest[i] > 0.5:\n",
     "                Y_predtest[i] = 1\n",
     "            else:\n",
     "                Y_predtest[i] = 0\n",
+    "        for i in range(len(y)):\n",
+    "            if y[i] == Y_predtest[i]:\n",
+    "                correct += 1\n",
     "        return Y_predtest\n"
    ],
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:27.046801Z",
-     "start_time": "2023-10-29T11:49:27.034826Z"
+     "end_time": "2023-10-29T06:58:19.575051Z",
+     "start_time": "2023-10-29T06:58:19.570372Z"
     }
    },
    "id": "515213178a2a06f1"
   },
   {
    "cell_type": "code",
-   "execution_count": 99,
+   "execution_count": 12,
    "outputs": [],
    "source": [
     "class Perceptron_adam_BCE:\n",
@@ -388,29 +399,33 @@
     "            self.weights -= (self.learning_rate / (np.sqrt(self.moving_avg_sq_w + self.epsilon))) * self.first_momentum_w\n",
     "            self.bias -= (self.learning_rate / (np.sqrt(self.moving_avg_sq_b + self.epsilon))) * self.first_momentum_b\n",
     "\n",
-    "    def test(self, X):\n",
+    "    def test(self, X, y):\n",
     "        Y_predtest = self.predicted(X)\n",
     "        Y_values = Y_predtest\n",
     "        correct = 0\n",
+    "        total = len(y)\n",
     "        for i in range(len(Y_predtest)):\n",
     "            if Y_predtest[i] > 0.5:\n",
     "                Y_predtest[i] = 1\n",
     "            else:\n",
     "                Y_predtest[i] = 0\n",
+    "        for i in range(len(y)):\n",
+    "            if y[i] == Y_predtest[i]:\n",
+    "                correct += 1\n",
     "        return Y_predtest\n"
    ],
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:27.048256Z",
-     "start_time": "2023-10-29T11:49:27.040461Z"
+     "end_time": "2023-10-29T06:58:19.578704Z",
+     "start_time": "2023-10-29T06:58:19.576269Z"
     }
    },
    "id": "6d2bfd8bf2efb5f1"
   },
   {
    "cell_type": "code",
-   "execution_count": 100,
+   "execution_count": 13,
    "outputs": [],
    "source": [
     "class Perceptron_adam_RMSE:\n",
@@ -470,29 +485,33 @@
     "            self.weights -= (self.learning_rate / (np.sqrt(self.moving_avg_sq_w + self.epsilon))) * self.first_momentum_w\n",
     "            self.bias -= (self.learning_rate / (np.sqrt(self.moving_avg_sq_b + self.epsilon))) * self.first_momentum_b\n",
     "\n",
-    "    def test(self, X):\n",
+    "    def test(self, X, y):\n",
     "        Y_predtest = self.predicted(X)\n",
     "        Y_values = Y_predtest\n",
     "        correct = 0\n",
+    "        total = len(y)\n",
     "        for i in range(len(Y_predtest)):\n",
     "            if Y_predtest[i] > 0.5:\n",
     "                Y_predtest[i] = 1\n",
     "            else:\n",
     "                Y_predtest[i] = 0\n",
+    "        for i in range(len(y)):\n",
+    "            if y[i] == Y_predtest[i]:\n",
+    "                correct += 1\n",
     "        return Y_predtest\n"
    ],
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:27.052613Z",
-     "start_time": "2023-10-29T11:49:27.045450Z"
+     "end_time": "2023-10-29T06:58:19.624972Z",
+     "start_time": "2023-10-29T06:58:19.623321Z"
     }
    },
    "id": "78c6a4950f132c1e"
   },
   {
    "cell_type": "code",
-   "execution_count": 101,
+   "execution_count": 14,
    "outputs": [],
    "source": [
     "n_trees = 100\n",
@@ -501,22 +520,22 @@
     "    indices = np.random.choice(X_train.shape[0],size=75,replace=True)\n",
     "    X_bootstrap = X_train[indices]\n",
     "    y_bootstrap = y_train[indices]\n",
-    "    model1 = Perceptron_adam_BCE()\n",
+    "    model1 = Perceptron_RMSProp_BCE()\n",
     "    model1.fit(X_bootstrap,y_bootstrap)\n",
     "    trees.append(model1)"
    ],
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:29.696654Z",
-     "start_time": "2023-10-29T11:49:27.051486Z"
+     "end_time": "2023-10-29T06:58:21.894861Z",
+     "start_time": "2023-10-29T06:58:19.628910Z"
     }
    },
    "id": "9005182f4425fbc3"
   },
   {
    "cell_type": "code",
-   "execution_count": 102,
+   "execution_count": 15,
    "outputs": [
     {
      "name": "stdout",
@@ -524,66 +543,66 @@
      "text": [
       "[1. 0. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1.\n",
       " 1. 1. 1. 1. 0. 0. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 0. 1. 1.\n",
-      " 1. 1. 1. 1. 0. 1. 1. 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 0. 1. 0. 1.\n",
-      " 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 0. 1. 0. 0. 1. 0. 1. 1. 1. 1. 1. 1. 1.\n",
-      " 1. 1. 0. 1. 0. 1. 1. 1. 1. 1. 0. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 0. 0. 1.\n",
-      " 1. 1. 0. 0. 1. 1. 0. 1. 1. 1. 1. 0. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 0. 1.\n",
+      " 1. 1. 1. 1. 0. 1. 1. 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1.\n",
+      " 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 0. 0. 1. 0. 1. 1. 1. 1. 1. 1. 1.\n",
+      " 1. 1. 0. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 0. 0. 1.\n",
+      " 1. 1. 0. 0. 1. 1. 0. 1. 1. 1. 1. 0. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1.\n",
       " 1. 1. 0. 1. 1. 1. 0. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 0.\n",
-      " 1. 0. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 0. 1.\n",
+      " 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1.\n",
       " 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.\n",
-      " 1. 0. 1. 1. 1. 0. 0. 1. 1. 1. 1. 1. 1. 0. 0. 1. 0. 1. 1. 1. 1. 0. 1. 1.\n",
+      " 1. 0. 1. 1. 1. 0. 0. 1. 1. 1. 1. 1. 1. 0. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1.\n",
       " 1. 1. 1. 0. 1. 1. 0. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.\n",
       " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 0. 1.\n",
-      " 1. 1. 1. 1. 1. 1. 0. 1. 1. 0. 1. 0. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 0.\n",
+      " 1. 1. 1. 1. 1. 1. 0. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 0.\n",
       " 0. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 0. 1. 0.\n",
-      " 0. 1. 1. 1. 0. 1. 0. 1. 1. 1. 1. 1. 1. 0. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1.\n",
+      " 0. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1.\n",
       " 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 0. 1.\n",
-      " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1.\n",
-      " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1.\n",
+      " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.\n",
+      " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.\n",
       " 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 0. 0. 1. 1. 0. 1. 1. 1. 0. 0. 1. 1.\n",
-      " 0. 1. 1. 0. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 0. 1. 0. 1. 1. 1.\n",
-      " 1. 1. 0. 1. 1. 1. 0. 1. 1. 1. 0. 1. 0. 1. 1. 1. 0. 0. 0. 1. 1. 0. 0. 1.\n",
+      " 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1.\n",
+      " 1. 1. 0. 1. 1. 1. 0. 1. 1. 1. 0. 1. 1. 1. 1. 1. 0. 0. 0. 1. 1. 0. 1. 1.\n",
       " 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 0. 1. 1. 1. 0. 1. 1.\n",
-      " 0. 0. 1. 1. 1. 1. 1. 0. 1. 0. 1. 1. 1. 0. 1. 0. 1. 1. 0. 1. 0. 1. 0. 0.\n",
+      " 0. 1. 1. 1. 1. 1. 1. 0. 1. 0. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 0. 1. 0. 0.\n",
       " 1. 1. 1. 0. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.\n",
       " 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 0.\n",
       " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 0. 1. 1. 0. 1.\n",
-      " 1. 1. 1. 1. 1. 0. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 0. 1. 1. 1. 1. 1.\n",
-      " 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 0. 1. 0. 1. 0. 1. 1. 0. 1. 0. 1.\n",
-      " 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 0. 0. 1. 1. 1. 1. 1. 0.\n",
-      " 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1.\n",
-      " 1. 1. 0. 1. 0. 1. 1. 0. 1. 1. 1. 1. 1. 0. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1.\n",
-      " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1.\n",
+      " 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 0. 1. 1. 1. 1. 1.\n",
+      " 1. 0. 1. 0. 1. 1. 0. 1. 1. 1. 1. 1. 1. 0. 1. 0. 1. 0. 1. 1. 0. 1. 0. 1.\n",
+      " 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 0. 0. 1. 1. 1. 1. 0.\n",
+      " 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.\n",
+      " 1. 1. 0. 1. 0. 1. 1. 0. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.\n",
+      " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 0. 1. 1.\n",
       " 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.\n",
       " 0. 1. 0. 1. 1. 0. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1.\n",
-      " 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 0. 1. 0. 1. 1. 1. 1. 0. 1. 1. 0.\n",
-      " 1. 0. 1. 1. 1. 1. 1. 1. 1. 0. 0. 1. 1. 0. 1. 0. 0. 1. 1. 1. 1. 1. 1. 0.\n",
-      " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 0. 1. 1. 1. 0. 1. 1. 1.\n",
-      " 1. 0. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 0. 0. 1. 1. 1. 0. 1. 1. 0. 1.\n",
-      " 0. 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1.\n",
-      " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1.\n",
-      " 0. 1. 1. 1. 1. 0. 1. 0. 1. 0. 0. 1. 1. 1. 0. 0. 1. 1. 1. 1. 1. 0. 1. 0.\n",
-      " 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1.]\n"
+      " 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 0. 1. 1. 1. 1. 1. 1. 0. 1. 1. 0.\n",
+      " 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 0. 1. 0. 1. 1. 1. 1. 1. 1. 1. 0.\n",
+      " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 0. 1. 1. 1. 1. 1. 1. 1.\n",
+      " 1. 0. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 0. 1.\n",
+      " 0. 1. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.\n",
+      " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 1. 1.\n",
+      " 1. 1. 1. 1. 1. 0. 1. 0. 1. 0. 0. 1. 1. 1. 1. 0. 1. 1. 1. 1. 1. 1. 1. 0.\n",
+      " 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 0. 1. 1. 1. 1.]\n"
      ]
     }
    ],
    "source": [
-    "predictions = [tree.test(X_test) for tree in trees]\n",
+    "predictions = [tree.test(X_test,y_test) for tree in trees]\n",
     "y_pred = np.round(np.mean(predictions, axis=0))\n",
     "print(y_pred)\n"
    ],
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:29.716164Z",
-     "start_time": "2023-10-29T11:49:29.697304Z"
+     "end_time": "2023-10-29T06:58:21.925486Z",
+     "start_time": "2023-10-29T06:58:21.894824Z"
     }
    },
    "id": "c6ec99d9469d32ef"
   },
   {
    "cell_type": "code",
-   "execution_count": 103,
+   "execution_count": 16,
    "outputs": [
     {
      "name": "stdout",
@@ -626,23 +645,23 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:29.716743Z",
-     "start_time": "2023-10-29T11:49:29.712027Z"
+     "end_time": "2023-10-29T06:58:21.926648Z",
+     "start_time": "2023-10-29T06:58:21.924403Z"
     }
    },
    "id": "f876db9e1331f5f"
   },
   {
    "cell_type": "code",
-   "execution_count": 104,
+   "execution_count": 17,
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "[[127 167]\n",
-      " [ 61 645]]\n",
-      "0.772\n"
+      "[[107 187]\n",
+      " [ 48 658]]\n",
+      "0.765\n"
      ]
     }
    ],
@@ -656,8 +675,8 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:29.746966Z",
-     "start_time": "2023-10-29T11:49:29.714081Z"
+     "end_time": "2023-10-29T06:58:21.930443Z",
+     "start_time": "2023-10-29T06:58:21.927028Z"
     }
    },
    "id": "9605e80c0aa04eeb"
@@ -674,13 +693,13 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 105,
+   "execution_count": 18,
    "outputs": [
     {
      "data": {
       "text/plain": "['RandomForestClassifier1.joblib']"
      },
-     "execution_count": 105,
+     "execution_count": 18,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -692,8 +711,8 @@
    "metadata": {
     "collapsed": false,
     "ExecuteTime": {
-     "end_time": "2023-10-29T11:49:29.747857Z",
-     "start_time": "2023-10-29T11:49:29.723448Z"
+     "end_time": "2023-10-29T06:58:21.940117Z",
+     "start_time": "2023-10-29T06:58:21.930545Z"
     }
    },
    "id": "a7c69a6a28e8dcb8"
