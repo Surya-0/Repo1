@@ -7,7 +7,7 @@ The objective of this competition is to predict 3 months of sales for 50 differe
 # Dataset Overview
 The dataset is from a Kaggle competition, it contains 5 years of store-item sales data, for 50 different items at 10 different stores.
 The dataset divided into three separate CSV files: train, test and sampla_submission.
-The train dataset includes the sales, while the test dataset has the sale prices left blank requiring to predict.
+The train dataset includes the sales, while the test dataset has the sale prices left blank requiring to predict.f
 
 https://www.kaggle.com/c/demand-forecasting-kernels-only
 
