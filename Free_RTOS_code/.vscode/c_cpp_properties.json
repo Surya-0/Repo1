@@ -1,0 +1,21 @@
+{
+    "name": "My Project",
+    "includePath": [
+        "${C:/Users/Lenovo/Desktop/Free_RTOS_own}/**",
+        "$C:/Users/Lenovo/Desktop/Free_RTOS_own/header",
+        "$C:/Users/Lenovo/Desktop/Free_RTOS_own/source",
+    ],
+    "browse": {
+        "path": [
+            "${C:/Users/Lenovo/Desktop/Free_RTOS_own}/**",
+            "$C:/Users/Lenovo/Desktop/Free_RTOS_own/header",
+            "$C:/Users/Lenovo/Desktop/Free_RTOS_own/source",
+        ],
+        "limitSymbolsToIncludedHeaders": true,
+        "databaseFilename": ""
+    },
+    "defines": [],
+    "compilerPath": "gcc",
+    "cStandard": "c11",
+    "cppStandard": "c++17",
+}
