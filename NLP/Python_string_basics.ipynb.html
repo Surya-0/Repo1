@@ -1,0 +1,1957 @@
+<html>
+<head>
+<title>Python_string_basics.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Python_string_basics.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">{ 
+ &quot;cells&quot;: [ 
+  { 
+   &quot;cell_type&quot;: &quot;markdown&quot;, 
+   &quot;source&quot;: [ 
+    &quot;## Basic string coding&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false 
+   }, 
+   &quot;id&quot;: &quot;84de4f8fc4ea0b15&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 1, 
+   &quot;id&quot;: &quot;initial_id&quot;, 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: true, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.932107Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.866040Z&quot; 
+    } 
+   }, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;My name is  Jose\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;person = \&quot;Jose\&quot;\n&quot;, 
+    &quot;print(\&quot;My name is \&quot;, person)\n&quot; 
+   ] 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 2, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;Today is  2023-11-04 00:00:00\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;from datetime import datetime\n&quot;, 
+    &quot;today = datetime(year = 2023,month = 11,day = 4)\n&quot;, 
+    &quot;print(\&quot;Today is \&quot;, today)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.932294Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.870691Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;895e7d26cc36868e&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 3, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;2023-11-04 16:01:47.872327\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;today = datetime.today()\n&quot;, 
+    &quot;print(today)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.932380Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.873054Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;21f2d19e9b1a804b&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;markdown&quot;, 
+   &quot;source&quot;: [ 
+    &quot;## Performing read - write operations on a text file&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false 
+   }, 
+   &quot;id&quot;: &quot;8c8c33608be0bc7a&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 4, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;Overwriting test.txt\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;%%writefile test.txt \n&quot;, 
+    &quot;Hello this is a quick  file test\n&quot;, 
+    &quot;This is the second line of the file&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.932917Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.876049Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;9d6d7b8e0a026d6&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 5, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;&lt;_io.TextIOWrapper name='test.txt' mode='r' encoding='UTF-8'&gt;\n&quot;, 
+      &quot;&lt;_io.TextIOWrapper name='/Users/surya/Documents/Surya/Git/Repo1/NLP/test.txt' mode='r' encoding='UTF-8'&gt;\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;my_file = open('test.txt') # Using the file name in the same directory\n&quot;, 
+    &quot;my_file2 = open('/Users/surya/Documents/Surya/Git/Repo1/NLP/test.txt') # Giving the entire file path \n&quot;, 
+    &quot;print(my_file) \n&quot;, 
+    &quot;print(my_file2) &quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.933025Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.881345Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;7a4ad032a2e5b477&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 6, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;'Hello this is a quick  file test\\nThis is the second line of the file\\n'&quot; 
+     }, 
+     &quot;execution_count&quot;: 6, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;my_file.read()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.933138Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.886287Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;58796fdef5595a0b&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 7, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;''&quot; 
+     }, 
+     &quot;execution_count&quot;: 7, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;my_file.read()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.933208Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.889061Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;1d3248cdfdfa9c51&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 8, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;0&quot; 
+     }, 
+     &quot;execution_count&quot;: 8, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;my_file.seek(0)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.933274Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.891624Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;11128e2deed83081&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 9, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;Hello this is a quick  file test\n&quot;, 
+      &quot;This is the second line of the file\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;content = my_file.read()\n&quot;, 
+    &quot;print(content)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.933348Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.893701Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;daec10e9f99d9ef2&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 10, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;my_file.close()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.933388Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.895296Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;9b2fdbe25f094bf0&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 11, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;['Hello this is a quick  file test\\n', 'This is the second line of the file\\n']&quot; 
+     }, 
+     &quot;execution_count&quot;: 11, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;my_file2.readlines()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.933478Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.897004Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;188c481c9df04ea6&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 12, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;['Hello this is a quick  file test\\n', 'This is the second line of the file\\n']\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;my_file2.seek(0)\n&quot;, 
+    &quot;content_2 = my_file2.readlines()\n&quot;, 
+    &quot;print(content_2)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.933549Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.900182Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;25d41e9cff99e1c8&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 13, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;Hello this is a quick  file test\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;['Hello', 'this', 'is', 'a', 'quick', 'file', 'test']\n&quot;, 
+      &quot;Hello\n&quot;, 
+      &quot;This is the second line of the file\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;['This', 'is', 'the', 'second', 'line', 'of', 'the', 'file']\n&quot;, 
+      &quot;This\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;for line in content_2:\n&quot;, 
+    &quot;    print(line)\n&quot;, 
+    &quot;    print(line.split())\n&quot;, 
+    &quot;    print(line.split()[0])&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.933624Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.902121Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;9f97037d66524cd9&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 14, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;my_file2.close()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.933662Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.905690Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;b06d254f1aa21000&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 15, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;''&quot; 
+     }, 
+     &quot;execution_count&quot;: 15, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;my_file3 = open('test.txt',mode='w+') # It truncates the original file.So anything in the original file is overwritten or deleted.Use it with caution\n&quot;, 
+    &quot;my_file3.read()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.933768Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.907365Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;60162c66a4598c70&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 16, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;17&quot; 
+     }, 
+     &quot;execution_count&quot;: 16, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;my_file3.write('My brand new text')&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.933851Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.911816Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;e2f4ffd56b28daba&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 17, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;0&quot; 
+     }, 
+     &quot;execution_count&quot;: 17, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;my_file3.seek(0)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.933954Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.913969Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;7314f90ca4bfe23d&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 18, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;'My brand new text'&quot; 
+     }, 
+     &quot;execution_count&quot;: 18, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;my_file3.read()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.934052Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.915974Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;79d2193c7bbb684f&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 19, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;my_file3.close()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.934095Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.918944Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;394356d7d6844eea&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 20, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;44&quot; 
+     }, 
+     &quot;execution_count&quot;: 20, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;my_file4 = open('test.txt',mode='a+')\n&quot;, 
+    &quot;my_file4.write('\\nThis is some more text which I am adding in')&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.934205Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.920997Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;902b978ac30a15a3&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 21, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;My brand new text\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;file = open('test.txt')\n&quot;, 
+    &quot;print(file.read())&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.934272Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.923271Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;984ade953632acbc&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 22, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;my_file4.close()\n&quot;, 
+    &quot;file.close()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.934318Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.925222Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;ebbb7157e548286f&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 23, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;['My brand new text\\n', 'This is some more text which I am adding in']\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;with open('test.txt','r') as my_new_file:\n&quot;, 
+    &quot;    my_var = my_new_file.readlines()\n&quot;, 
+    &quot;    print(my_var)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:47.934385Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.926992Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;b8eac4d6268a0635&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;markdown&quot;, 
+   &quot;source&quot;: [ 
+    &quot;## Performing read - write operations on a PDF file&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false 
+   }, 
+   &quot;id&quot;: &quot;ab8c72af8f75e267&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 24, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;Requirement already satisfied: PyPDF2 in /Users/surya/anaconda3/envs/tf/lib/python3.11/site-packages (3.0.1)\r\n&quot;, 
+      &quot;Note: you may need to restart the kernel to use updated packages.\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;pip install PyPDF2&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:31:49.079768Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:31:47.928954Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;8c2b987108f1f77c&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 25, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;import PyPDF2&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:32:01.738269Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:32:01.708717Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;548ba71119a9d145&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 26, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;my_pdf_file = open('US_Declaration.pdf',mode='rb')&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:34:28.913869Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:34:28.898553Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;5bdff1b53104d410&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 28, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;pdf_reader = PyPDF2.PdfReader(my_pdf_file)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:35:28.127797Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:35:28.122336Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;c0bf6c7cd9a893f8&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 33, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;5&quot; 
+     }, 
+     &quot;execution_count&quot;: 33, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;len(pdf_reader.pages)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:36:56.066396Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:36:56.060298Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;866d33c358714e5a&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 35, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;page_one = pdf_reader.pages[0]&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:41:43.808150Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:41:43.805179Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;6ec8eda6e277e6c7&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 38, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;my_text = page_one.extract_text()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:42:36.610571Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:42:36.605191Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;543cb1b267bdb312&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 39, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;my_pdf_file.close()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:42:45.403024Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:42:45.384115Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;bfd481093fad7bd&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 43, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;f = open('US_Declaration.pdf',mode='rb')\n&quot;, 
+    &quot;pdf_reader = PyPDF2.PdfReader(f)\n&quot;, 
+    &quot;first_page = pdf_reader.pages[0]&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:48:29.763024Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:48:29.751777Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;4f20ec8834d913db&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 44, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;Declaration of Independence\n&quot;, 
+      &quot;IN CONGRESS, July 4, 1776.  \n&quot;, 
+      &quot;The unanimous Declaration of the thirteen united States of America,  \n&quot;, 
+      &quot;When in the Course of human events, it becomes necessary for one people to dissolve thepolitical bands which have connected them with another, and to assume among the powers of theearth, the separate and equal station to which the Laws of Nature and of Nature's God entitlethem, a decent respect to the opinions of mankind requires that they should declare the causeswhich impel them to the separation. We hold these truths to be self-evident, that all men are created equal, that they are endowed bytheir Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit\n&quot;, 
+      &quot;of Happiness.— \u0014That to secure these rights, Governments are instituted among Men, derivingtheir just powers from the consent of the governed,—  \u0014That whenever any Form of Government\n&quot;, 
+      &quot;becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to\n&quot;, 
+      &quot;institute new Government, laying its foundation on such principles and organizing its powers in\n&quot;, 
+      &quot;such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence,indeed, will dictate that Governments long established should not be changed for light andtransient causes; and accordingly all experience hath shewn, that mankind are more disposed to\n&quot;, 
+      &quot;suffer, while evils are sufferable, than to right themselves by abolishing the forms to which theyare accustomed. But when a long train of abuses and usurpations, pursuing invariably the same\n&quot;, 
+      &quot;Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty,\n&quot;, 
+      &quot;to throw off such Government, and to provide new Guards for their future securit y.— \u0014Such has\n&quot;, 
+      &quot;been the patient sufferance of these Colonies; and such is now the necessity which constrainsthem to alter their former Systems of Government. The history of the present King of GreatBritain is a history of repeated injuries and usurpations, all having in direct object the\n&quot;, 
+      &quot;establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a\n&quot;, 
+      &quot;candid world. \n&quot;, 
+      &quot;He has refused his Assent to Laws, the most wholesome and necessary for the\n&quot;, 
+      &quot;public good.He has forbidden his Governors to pass Laws of immediate and pressingimportance, unless suspended in their operation till his Assent should be obtained;and when so suspended, he has utterly neglected to attend to them.He has refused to pass other Laws for the accommodation of large districts of\n&quot;, 
+      &quot;people, unless those people would relinquish the right of Representation in theLegislature, a right inestimable to them and formidable to tyrants only. He has called together legislative bodies at places unusual, uncomfortable, and distantfrom the depository of their public Records, for the sole purpose of fatiguing them into\n&quot;, 
+      &quot;compliance with his measures.\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;print(first_page.extract_text())&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:48:30.341579Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:48:30.334100Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;cb5e668a5c090923&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 45, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;{'/Type': '/Page',\n '/Contents': {},\n '/MediaBox': [0, 0, 612, 792],\n '/Resources': {'/Font': {'/F9': {'/Type': '/Font',\n    '/Subtype': '/Type1',\n    '/Name': '/F9',\n    '/Encoding': '/WinAnsiEncoding',\n    '/FirstChar': 31,\n    '/LastChar': 255,\n    '/Widths': [778,\n     250,\n     333,\n     555,\n     500,\n     500,\n     1000,\n     833,\n     278,\n     333,\n     333,\n     500,\n     570,\n     250,\n     333,\n     250,\n     278,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     333,\n     333,\n     570,\n     570,\n     570,\n     500,\n     930,\n     722,\n     667,\n     722,\n     722,\n     667,\n     611,\n     778,\n     778,\n     389,\n     500,\n     778,\n     667,\n     944,\n     722,\n     778,\n     611,\n     778,\n     722,\n     556,\n     667,\n     722,\n     722,\n     1000,\n     722,\n     722,\n     667,\n     333,\n     278,\n     333,\n     581,\n     500,\n     333,\n     500,\n     556,\n     444,\n     556,\n     444,\n     333,\n     500,\n     556,\n     278,\n     333,\n     556,\n     278,\n     833,\n     556,\n     500,\n     556,\n     556,\n     444,\n     389,\n     333,\n     556,\n     500,\n     722,\n     500,\n     500,\n     444,\n     394,\n     220,\n     394,\n     520,\n     778,\n     500,\n     778,\n     333,\n     500,\n     500,\n     1000,\n     500,\n     500,\n     333,\n     1000,\n     556,\n     333,\n     1000,\n     778,\n     778,\n     778,\n     778,\n     333,\n     333,\n     500,\n     500,\n     350,\n     500,\n     1000,\n     333,\n     1000,\n     389,\n     333,\n     722,\n     778,\n     778,\n     722,\n     250,\n     333,\n     500,\n     500,\n     500,\n     500,\n     220,\n     500,\n     333,\n     747,\n     300,\n     500,\n     570,\n     333,\n     747,\n     500,\n     400,\n     549,\n     300,\n     300,\n     333,\n     576,\n     540,\n     250,\n     333,\n     300,\n     330,\n     500,\n     750,\n     750,\n     750,\n     500,\n     722,\n     722,\n     722,\n     722,\n     722,\n     722,\n     1000,\n     722,\n     667,\n     667,\n     667,\n     667,\n     389,\n     389,\n     389,\n     389,\n     722,\n     722,\n     778,\n     778,\n     778,\n     778,\n     778,\n     570,\n     778,\n     722,\n     722,\n     722,\n     722,\n     722,\n     611,\n     556,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     722,\n     444,\n     444,\n     444,\n     444,\n     444,\n     278,\n     278,\n     278,\n     278,\n     500,\n     556,\n     500,\n     500,\n     500,\n     500,\n     500,\n     549,\n     500,\n     556,\n     556,\n     556,\n     556,\n     500,\n     556,\n     500],\n    '/BaseFont': '/TimesNewRomanPS-BoldMT',\n    '/FontDescriptor': {'/Type': '/FontDescriptor',\n     '/FontName': '/TimesNewRomanPS-BoldMT',\n     '/Ascent': 677,\n     '/CapHeight': 500,\n     '/Descent': -216,\n     '/Flags': 34,\n     '/FontBBox': [-558, -307, 2034, 1026],\n     '/ItalicAngle': 0,\n     '/StemV': 0,\n     '/AvgWidth': 427,\n     '/Leading': 150,\n     '/MaxWidth': 2592,\n     '/XHeight': 250,\n     '/FontFile': {'/Filter': ['/ASCII85Decode'],\n      '/Length1': 4690,\n      '/Length2': 46374,\n      '/Length3': 532}}},\n   '/F6': {'/Type': '/Font',\n    '/Subtype': '/Type1',\n    '/Name': '/F6',\n    '/Encoding': '/WinAnsiEncoding',\n    '/FirstChar': 31,\n    '/LastChar': 255,\n    '/Widths': [778,\n     250,\n     333,\n     408,\n     500,\n     500,\n     833,\n     778,\n     180,\n     333,\n     333,\n     500,\n     564,\n     250,\n     333,\n     250,\n     278,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     278,\n     278,\n     564,\n     564,\n     564,\n     444,\n     921,\n     722,\n     667,\n     667,\n     722,\n     611,\n     556,\n     722,\n     722,\n     333,\n     389,\n     722,\n     611,\n     889,\n     722,\n     722,\n     556,\n     722,\n     667,\n     556,\n     611,\n     722,\n     722,\n     944,\n     722,\n     722,\n     611,\n     333,\n     278,\n     333,\n     469,\n     500,\n     333,\n     444,\n     500,\n     444,\n     500,\n     444,\n     333,\n     500,\n     500,\n     278,\n     278,\n     500,\n     278,\n     778,\n     500,\n     500,\n     500,\n     500,\n     333,\n     389,\n     278,\n     500,\n     500,\n     722,\n     500,\n     500,\n     444,\n     480,\n     200,\n     480,\n     541,\n     778,\n     500,\n     778,\n     333,\n     500,\n     444,\n     1000,\n     500,\n     500,\n     333,\n     1000,\n     556,\n     333,\n     889,\n     778,\n     778,\n     778,\n     778,\n     333,\n     333,\n     444,\n     444,\n     350,\n     500,\n     1000,\n     333,\n     980,\n     389,\n     333,\n     722,\n     778,\n     778,\n     722,\n     250,\n     333,\n     500,\n     500,\n     500,\n     500,\n     200,\n     500,\n     333,\n     760,\n     276,\n     500,\n     564,\n     333,\n     760,\n     500,\n     400,\n     549,\n     300,\n     300,\n     333,\n     576,\n     453,\n     250,\n     333,\n     300,\n     310,\n     500,\n     750,\n     750,\n     750,\n     444,\n     722,\n     722,\n     722,\n     722,\n     722,\n     722,\n     889,\n     667,\n     611,\n     611,\n     611,\n     611,\n     333,\n     333,\n     333,\n     333,\n     722,\n     722,\n     722,\n     722,\n     722,\n     722,\n     722,\n     564,\n     722,\n     722,\n     722,\n     722,\n     722,\n     722,\n     556,\n     500,\n     444,\n     444,\n     444,\n     444,\n     444,\n     444,\n     667,\n     444,\n     444,\n     444,\n     444,\n     444,\n     278,\n     278,\n     278,\n     278,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     549,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500,\n     500],\n    '/BaseFont': '/TimesNewRomanPSMT',\n    '/FontDescriptor': {'/Type': '/FontDescriptor',\n     '/FontName': '/TimesNewRomanPSMT',\n     '/Ascent': 693,\n     '/CapHeight': 500,\n     '/Descent': -216,\n     '/Flags': 34,\n     '/FontBBox': [-568, -307, 2028, 1007],\n     '/ItalicAngle': 0,\n     '/StemV': 0,\n     '/AvgWidth': 401,\n     '/Leading': 150,\n     '/MaxWidth': 2597,\n     '/XHeight': 250,\n     '/FontFile': {'/Filter': ['/ASCII85Decode'],\n      '/Length1': 4680,\n      '/Length2': 46205,\n      '/Length3': 532}}}},\n  '/ProcSet': ['/PDF', '/Text']},\n '/Parent': {'/Type': '/Pages',\n  '/Count': 1,\n  '/Kids': [IndirectObject(4, 0, 4690028048)]}}&quot; 
+     }, 
+     &quot;execution_count&quot;: 45, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;pdf_writer = PyPDF2.PdfWriter()\n&quot;, 
+    &quot;pdf_writer.add_page(first_page)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:50:39.563779Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:50:39.524025Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;e7e38efa890f4bc7&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 46, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;(False, &lt;_io.BufferedWriter name='My_brand_new.pdf'&gt;)&quot; 
+     }, 
+     &quot;execution_count&quot;: 46, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;pdf_output = open('My_brand_new.pdf',mode='wb')\n&quot;, 
+    &quot;pdf_writer.write(pdf_output)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:51:33.231953Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:51:33.208302Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;70dd4207e348c8a0&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 47, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;pdf_output.close()\n&quot;, 
+    &quot;f.close()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:51:59.633350Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:51:59.621638Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;6d0af04aa48955b1&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 48, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;brand_new = open('My_brand_new.pdf',mode='rb')\n&quot;, 
+    &quot;pdf_reader = PyPDF2.PdfReader(brand_new)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:53:04.739180Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:53:04.717148Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;70e9bdb4dfbce6b6&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 50, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;1&quot; 
+     }, 
+     &quot;execution_count&quot;: 50, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;len(pdf_reader.pages)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:53:14.097829Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:53:14.093693Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;4ace8420fe0cc0f2&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 55, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;f = open('US_Declaration.pdf',mode='rb')\n&quot;, 
+    &quot;pdf_reader = PyPDF2.PdfReader(f)\n&quot;, 
+    &quot;pdf_text = []\n&quot;, 
+    &quot;for p in range(len(pdf_reader.pages)):\n&quot;, 
+    &quot;    page = pdf_reader.pages[p]\n&quot;, 
+    &quot;    pdf_text.append(page.extract_text())\n&quot;, 
+    &quot;f.close()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:58:24.444374Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:58:24.409815Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;a19ed5d2a2021205&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 56, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;5&quot; 
+     }, 
+     &quot;execution_count&quot;: 56, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;len(pdf_text)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:58:25.071677Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:58:25.059012Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;7ee6ee79cfbd8041&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 58, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;Declaration of Independence\n&quot;, 
+      &quot;IN CONGRESS, July 4, 1776.  \n&quot;, 
+      &quot;The unanimous Declaration of the thirteen united States of America,  \n&quot;, 
+      &quot;When in the Course of human events, it becomes necessary for one people to dissolve thepolitical bands which have connected them with another, and to assume among the powers of theearth, the separate and equal station to which the Laws of Nature and of Nature's God entitlethem, a decent respect to the opinions of mankind requires that they should declare the causeswhich impel them to the separation. We hold these truths to be self-evident, that all men are created equal, that they are endowed bytheir Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit\n&quot;, 
+      &quot;of Happiness.— \u0014That to secure these rights, Governments are instituted among Men, derivingtheir just powers from the consent of the governed,—  \u0014That whenever any Form of Government\n&quot;, 
+      &quot;becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to\n&quot;, 
+      &quot;institute new Government, laying its foundation on such principles and organizing its powers in\n&quot;, 
+      &quot;such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence,indeed, will dictate that Governments long established should not be changed for light andtransient causes; and accordingly all experience hath shewn, that mankind are more disposed to\n&quot;, 
+      &quot;suffer, while evils are sufferable, than to right themselves by abolishing the forms to which theyare accustomed. But when a long train of abuses and usurpations, pursuing invariably the same\n&quot;, 
+      &quot;Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty,\n&quot;, 
+      &quot;to throw off such Government, and to provide new Guards for their future securit y.— \u0014Such has\n&quot;, 
+      &quot;been the patient sufferance of these Colonies; and such is now the necessity which constrainsthem to alter their former Systems of Government. The history of the present King of GreatBritain is a history of repeated injuries and usurpations, all having in direct object the\n&quot;, 
+      &quot;establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a\n&quot;, 
+      &quot;candid world. \n&quot;, 
+      &quot;He has refused his Assent to Laws, the most wholesome and necessary for the\n&quot;, 
+      &quot;public good.He has forbidden his Governors to pass Laws of immediate and pressingimportance, unless suspended in their operation till his Assent should be obtained;and when so suspended, he has utterly neglected to attend to them.He has refused to pass other Laws for the accommodation of large districts of\n&quot;, 
+      &quot;people, unless those people would relinquish the right of Representation in theLegislature, a right inestimable to them and formidable to tyrants only. He has called together legislative bodies at places unusual, uncomfortable, and distantfrom the depository of their public Records, for the sole purpose of fatiguing them into\n&quot;, 
+      &quot;compliance with his measures.\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;He has dissolved Re presentative Ho uses repeatedly , for opposing wit h manly\n&quot;, 
+      &quot;firmness his invasions on the rights of the people.\n&quot;, 
+      &quot;He has refused for a long time, after such dissolutions, to cause others to be\n&quot;, 
+      &quot;elected; whereby the Leg islative powers, incapable of Annihilation, have returned\n&quot;, 
+      &quot;to the People at lar ge for their exe rcise; the State r emaining in the me an time\n&quot;, 
+      &quot;exposed to all the dangers of invasion from without, and convulsions within.\n&quot;, 
+      &quot;He has endeavou red to prevent the  population of these  States; for that pur pose\n&quot;, 
+      &quot;obstructing the L aws for Natural ization of Foreig ners; refusing  to pass others to\n&quot;, 
+      &quot;encourage their migrations hither, and raising the conditions of new\n&quot;, 
+      &quot;Appropriations of  Lands.\n&quot;, 
+      &quot;He has obstructed the Administration of Justice, by refusing his Assent to Laws\n&quot;, 
+      &quot;for establishing  Judiciary pow ers.\n&quot;, 
+      &quot;He has made Judge s dependent on his Wil l alone, for the te nure of their off ices,\n&quot;, 
+      &quot;and the amount and  payment of t heir salaries.\n&quot;, 
+      &quot;He has erected  a multitude of New  Offices, and se nt hither swarms of  Officers to\n&quot;, 
+      &quot;harrass our people, and eat out their substance.\n&quot;, 
+      &quot;He has kept among us, in times of peace, Standing Armies without the Consent of\n&quot;, 
+      &quot;our legislature s.\n&quot;, 
+      &quot;He has affected to render the Military independent of a nd superior to the Civil power.\n&quot;, 
+      &quot;He has combined with others to subject us to a jurisdiction foreign to our\n&quot;, 
+      &quot;constitution, and unacknowledged by our laws; giving his Assent to their Acts of\n&quot;, 
+      &quot;pretended Legislation:\n&quot;, 
+      &quot;For Quartering  large bodies of  armed troops amon g us:\n&quot;, 
+      &quot;For protecting them, by a mock Trial, from punishment for any  Murders which\n&quot;, 
+      &quot;they should c ommit on the Inha bitants of these Sta tes:\n&quot;, 
+      &quot;For cutting off our Trade with all parts of the world:\n&quot;, 
+      &quot;For imposing Taxe s on us without our Con sent: For deprivi ng us in many  cases,\n&quot;, 
+      &quot;of the benefits of T rial by J ury:\n&quot;, 
+      &quot;For transporting us beyond Seas to be tried for pretended of fences\n&quot;, 
+      &quot;For abolishing the free System of English L aws in a neighbouring Province,\n&quot;, 
+      &quot;establishing therein an Arbitrary government, and e nlarging its Boundaries so as\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;to render it at onc e an example and fi t instrument for intr oducing the same\n&quot;, 
+      &quot;absolute rule into  these Colonies:\n&quot;, 
+      &quot;For taking away our Charters, abolishing our most valuable L aws, and altering\n&quot;, 
+      &quot;fundamentally  the Forms of our G overnments:\n&quot;, 
+      &quot;For suspending  our own Leg islatures, and de claring themse lves invested with\n&quot;, 
+      &quot;power to legislate for us in all cases whatsoever.\n&quot;, 
+      &quot;He has abdicated Government here, by declar ing us out of his Protection and\n&quot;, 
+      &quot;waging War ag ainst us.\n&quot;, 
+      &quot;He has plundered our seas, ravaged our Coasts, burnt our towns, and destroy ed the\n&quot;, 
+      &quot;lives of our people.\n&quot;, 
+      &quot;He is at this time transporting large Armies of foreign Mercenaries to compleat\n&quot;, 
+      &quot;the works of death, desolation and tyranny , already begun with circumstances of\n&quot;, 
+      &quot;Cruelty &amp; pe rfidy scar cely para lleled in the most ba rbarous ages,  and totally\n&quot;, 
+      &quot;unworthy of the Head of a civilized nation.\n&quot;, 
+      &quot;He has constrained our fellow Citizens taken Captive on the high Seas to bear\n&quot;, 
+      &quot;Arms against their Country, to become the executioners of their friends and\n&quot;, 
+      &quot;Brethren, or to  fall themselves by  their Hands.\n&quot;, 
+      &quot;He has excited domestic insurrections amongst us, and has endeavoured to bring\n&quot;, 
+      &quot;on the inhabitants of our frontiers, the merciless Indian Savages, whose known\n&quot;, 
+      &quot;rule of warfare, is an undistinguished destruction of all ages, sexes and conditions. \n&quot;, 
+      &quot;In every  stage of these O ppressions We have  Petitioned for Redr ess in the most humble  terms:\n&quot;, 
+      &quot;Our repeated Pe titions have been a nswered only  by repeate d injury. A Pr ince whose char acter is\n&quot;, 
+      &quot;thus marked by every ac t which may define a Tyra nt, is unfit to be the ruler of a free people. \n&quot;, 
+      &quot;Nor have We been wanting in attentions to our Brittish brethren. We have warned them from\n&quot;, 
+      &quot;time to time  of attemp ts by th eir legi slature t o extend an  unwarra ntable jur isdiction  over us. We\n&quot;, 
+      &quot;have reminded them of the circumstances of our emigration and settlement here. We have\n&quot;, 
+      &quot;appealed to their native justice and magnanimity, and we have c onjured them by the ties of our\n&quot;, 
+      &quot;common kindred to disavow these usurpations, which, would inevitably interrupt our\n&quot;, 
+      &quot;connections and correspondence. They too have bee n deaf to the voice of justice and of\n&quot;, 
+      &quot;consanguinity. We must, therefore, acquiesce in the necessity , which denounces our Separation,\n&quot;, 
+      &quot;and hold them, as we hold the rest of mankind, Enemies in War, in Peace Friends. \n&quot;, 
+      &quot;We, therefore, t he Representativ es of the united Sta tes of America, i n General Congr ess,\n&quot;, 
+      &quot;Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do,\n&quot;, 
+      &quot;in the Name, and by Authority of the g ood People of these Colonies, solemnly publish and\n&quot;, 
+      &quot;declare, That th ese United Colonie s are, and of Rig ht ought to be Fre e and Indepe ndent States;\n&quot;, 
+      &quot;that they are Absolved from all Allegiance to the British Crown, and that a ll political connection\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;between them and the State of Great Britain, is and ought to be totally dissolved; and that as Freeand Independent States, they have full Power to levy War, conclude Peace, contract Alliances,\n&quot;, 
+      &quot;establish Commerce, and to do all other Acts and Things which Independent States may of rightdo. And for the support of this Declaration, with a firm reliance on the protection of divineProvidence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor.[The 56 signatures on the Declaration were arranged in six columns: ] \n&quot;, 
+      &quot;[Column 1] Georgia:\n&quot;, 
+      &quot;   Button Gwinnett\n&quot;, 
+      &quot;   Lyman Hall\n&quot;, 
+      &quot;   George Walton \n&quot;, 
+      &quot;[Column 2] North Carolina:\n&quot;, 
+      &quot;   William Hooper\n&quot;, 
+      &quot;   Joseph Hewes\n&quot;, 
+      &quot;   John Penn\n&quot;, 
+      &quot; South Carolina:\n&quot;, 
+      &quot;   Edward Ru tledge\n&quot;, 
+      &quot;   Thomas Heyward, Jr.\n&quot;, 
+      &quot;  Thomas Lynch, Jr.\n&quot;, 
+      &quot;  Arthur Middleton \n&quot;, 
+      &quot;[Column 3] Massachusetts:\n&quot;, 
+      &quot;   John Hancock Maryland:\n&quot;, 
+      &quot;   Samuel Chase   William Paca   Thomas Stone   Charles Carroll of Carrollton Virginia:\n&quot;, 
+      &quot;   George Wythe   Richard Henry Lee   Thomas Jefferson   Benjamin Harrison   Thomas Nelson, Jr.   Francis Lightfoot Lee   Carter Braxton [Column 4] Pennsylvania:\n&quot;, 
+      &quot;  Robert Morris   Benjamin Rush\n&quot;, 
+      &quot;   Benjamin Fran klin\n&quot;, 
+      &quot;   John Morton\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;\n&quot;, 
+      &quot;   George Clymer\n&quot;, 
+      &quot;   James Smith\n&quot;, 
+      &quot;   George Taylor\n&quot;, 
+      &quot;   James Wilson\n&quot;, 
+      &quot;   George Ross\n&quot;, 
+      &quot; Delaware:\n&quot;, 
+      &quot;   Caesar Rodney\n&quot;, 
+      &quot;   George Read\n&quot;, 
+      &quot;   Thomas McKean \n&quot;, 
+      &quot;[Column 5] New York:\n&quot;, 
+      &quot;   Wi lliam Floyd\n&quot;, 
+      &quot;   Philip Livingston\n&quot;, 
+      &quot;   Francis L ewis\n&quot;, 
+      &quot;   Lewis Morris\n&quot;, 
+      &quot; New Jersey:\n&quot;, 
+      &quot;   Richard Stockton\n&quot;, 
+      &quot;   John Witherspoon\n&quot;, 
+      &quot;   Francis Hopkinson\n&quot;, 
+      &quot;   John Hart\n&quot;, 
+      &quot;   Abraham Clark \n&quot;, 
+      &quot;[Column 6] New Hampshire:\n&quot;, 
+      &quot;   Josiah Bartlett\n&quot;, 
+      &quot;   William Whipple\n&quot;, 
+      &quot; Massachusetts:\n&quot;, 
+      &quot;   Samuel Adams\n&quot;, 
+      &quot;   John Adams\n&quot;, 
+      &quot;   Robert Treat Paine\n&quot;, 
+      &quot;   Elbridge Gerry\n&quot;, 
+      &quot; Rhode Island:\n&quot;, 
+      &quot;   Stephen Hopkins\n&quot;, 
+      &quot;   William Ellery\n&quot;, 
+      &quot; Connecticut:\n&quot;, 
+      &quot;   Roger Sherman\n&quot;, 
+      &quot;   Samuel Huntington\n&quot;, 
+      &quot;   William Williams\n&quot;, 
+      &quot;   Oliver Wolcott\n&quot;, 
+      &quot; New Hampshire:\n&quot;, 
+      &quot; Matthew Thornton\n&quot;, 
+      &quot; \n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;for page in pdf_text:\n&quot;, 
+    &quot;    print(page)\n&quot;, 
+    &quot;    print('\\n')\n&quot;, 
+    &quot;    print('\\n')&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:58:57.306765Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:58:57.298935Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;3f12432f74c4d5fa&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 59, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;[\&quot;Declaration of Independence\\nIN CONGRESS, July 4, 1776.  \\nThe unanimous Declaration of the thirteen united States of America,  \\nWhen in the Course of human events, it becomes necessary for one people to dissolve thepolitical bands which have connected them with another, and to assume among the powers of theearth, the separate and equal station to which the Laws of Nature and of Nature's God entitlethem, a decent respect to the opinions of mankind requires that they should declare the causeswhich impel them to the separation. We hold these truths to be self-evident, that all men are created equal, that they are endowed bytheir Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit\\nof Happiness.— \\x14That to secure these rights, Governments are instituted among Men, derivingtheir just powers from the consent of the governed,—  \\x14That whenever any Form of Government\\nbecomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to\\ninstitute new Government, laying its foundation on such principles and organizing its powers in\\nsuch form, as to them shall seem most likely to effect their Safety and Happiness. Prudence,indeed, will dictate that Governments long established should not be changed for light andtransient causes; and accordingly all experience hath shewn, that mankind are more disposed to\\nsuffer, while evils are sufferable, than to right themselves by abolishing the forms to which theyare accustomed. But when a long train of abuses and usurpations, pursuing invariably the same\\nObject evinces a design to reduce them under absolute Despotism, it is their right, it is their duty,\\nto throw off such Government, and to provide new Guards for their future securit y.— \\x14Such has\\nbeen the patient sufferance of these Colonies; and such is now the necessity which constrainsthem to alter their former Systems of Government. The history of the present King of GreatBritain is a history of repeated injuries and usurpations, all having in direct object the\\nestablishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a\\ncandid world. \\nHe has refused his Assent to Laws, the most wholesome and necessary for the\\npublic good.He has forbidden his Governors to pass Laws of immediate and pressingimportance, unless suspended in their operation till his Assent should be obtained;and when so suspended, he has utterly neglected to attend to them.He has refused to pass other Laws for the accommodation of large districts of\\npeople, unless those people would relinquish the right of Representation in theLegislature, a right inestimable to them and formidable to tyrants only. He has called together legislative bodies at places unusual, uncomfortable, and distantfrom the depository of their public Records, for the sole purpose of fatiguing them into\\ncompliance with his measures.\&quot;,\n 'He has dissolved Re presentative Ho uses repeatedly , for opposing wit h manly\\nfirmness his invasions on the rights of the people.\\nHe has refused for a long time, after such dissolutions, to cause others to be\\nelected; whereby the Leg islative powers, incapable of Annihilation, have returned\\nto the People at lar ge for their exe rcise; the State r emaining in the me an time\\nexposed to all the dangers of invasion from without, and convulsions within.\\nHe has endeavou red to prevent the  population of these  States; for that pur pose\\nobstructing the L aws for Natural ization of Foreig ners; refusing  to pass others to\\nencourage their migrations hither, and raising the conditions of new\\nAppropriations of  Lands.\\nHe has obstructed the Administration of Justice, by refusing his Assent to Laws\\nfor establishing  Judiciary pow ers.\\nHe has made Judge s dependent on his Wil l alone, for the te nure of their off ices,\\nand the amount and  payment of t heir salaries.\\nHe has erected  a multitude of New  Offices, and se nt hither swarms of  Officers to\\nharrass our people, and eat out their substance.\\nHe has kept among us, in times of peace, Standing Armies without the Consent of\\nour legislature s.\\nHe has affected to render the Military independent of a nd superior to the Civil power.\\nHe has combined with others to subject us to a jurisdiction foreign to our\\nconstitution, and unacknowledged by our laws; giving his Assent to their Acts of\\npretended Legislation:\\nFor Quartering  large bodies of  armed troops amon g us:\\nFor protecting them, by a mock Trial, from punishment for any  Murders which\\nthey should c ommit on the Inha bitants of these Sta tes:\\nFor cutting off our Trade with all parts of the world:\\nFor imposing Taxe s on us without our Con sent: For deprivi ng us in many  cases,\\nof the benefits of T rial by J ury:\\nFor transporting us beyond Seas to be tried for pretended of fences\\nFor abolishing the free System of English L aws in a neighbouring Province,\\nestablishing therein an Arbitrary government, and e nlarging its Boundaries so as',\n 'to render it at onc e an example and fi t instrument for intr oducing the same\\nabsolute rule into  these Colonies:\\nFor taking away our Charters, abolishing our most valuable L aws, and altering\\nfundamentally  the Forms of our G overnments:\\nFor suspending  our own Leg islatures, and de claring themse lves invested with\\npower to legislate for us in all cases whatsoever.\\nHe has abdicated Government here, by declar ing us out of his Protection and\\nwaging War ag ainst us.\\nHe has plundered our seas, ravaged our Coasts, burnt our towns, and destroy ed the\\nlives of our people.\\nHe is at this time transporting large Armies of foreign Mercenaries to compleat\\nthe works of death, desolation and tyranny , already begun with circumstances of\\nCruelty &amp; pe rfidy scar cely para lleled in the most ba rbarous ages,  and totally\\nunworthy of the Head of a civilized nation.\\nHe has constrained our fellow Citizens taken Captive on the high Seas to bear\\nArms against their Country, to become the executioners of their friends and\\nBrethren, or to  fall themselves by  their Hands.\\nHe has excited domestic insurrections amongst us, and has endeavoured to bring\\non the inhabitants of our frontiers, the merciless Indian Savages, whose known\\nrule of warfare, is an undistinguished destruction of all ages, sexes and conditions. \\nIn every  stage of these O ppressions We have  Petitioned for Redr ess in the most humble  terms:\\nOur repeated Pe titions have been a nswered only  by repeate d injury. A Pr ince whose char acter is\\nthus marked by every ac t which may define a Tyra nt, is unfit to be the ruler of a free people. \\nNor have We been wanting in attentions to our Brittish brethren. We have warned them from\\ntime to time  of attemp ts by th eir legi slature t o extend an  unwarra ntable jur isdiction  over us. We\\nhave reminded them of the circumstances of our emigration and settlement here. We have\\nappealed to their native justice and magnanimity, and we have c onjured them by the ties of our\\ncommon kindred to disavow these usurpations, which, would inevitably interrupt our\\nconnections and correspondence. They too have bee n deaf to the voice of justice and of\\nconsanguinity. We must, therefore, acquiesce in the necessity , which denounces our Separation,\\nand hold them, as we hold the rest of mankind, Enemies in War, in Peace Friends. \\nWe, therefore, t he Representativ es of the united Sta tes of America, i n General Congr ess,\\nAssembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do,\\nin the Name, and by Authority of the g ood People of these Colonies, solemnly publish and\\ndeclare, That th ese United Colonie s are, and of Rig ht ought to be Fre e and Indepe ndent States;\\nthat they are Absolved from all Allegiance to the British Crown, and that a ll political connection',\n 'between them and the State of Great Britain, is and ought to be totally dissolved; and that as Freeand Independent States, they have full Power to levy War, conclude Peace, contract Alliances,\\nestablish Commerce, and to do all other Acts and Things which Independent States may of rightdo. And for the support of this Declaration, with a firm reliance on the protection of divineProvidence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor.[The 56 signatures on the Declaration were arranged in six columns: ] \\n[Column 1] Georgia:\\n   Button Gwinnett\\n   Lyman Hall\\n   George Walton \\n[Column 2] North Carolina:\\n   William Hooper\\n   Joseph Hewes\\n   John Penn\\n South Carolina:\\n   Edward Ru tledge\\n   Thomas Heyward, Jr.\\n  Thomas Lynch, Jr.\\n  Arthur Middleton \\n[Column 3] Massachusetts:\\n   John Hancock Maryland:\\n   Samuel Chase   William Paca   Thomas Stone   Charles Carroll of Carrollton Virginia:\\n   George Wythe   Richard Henry Lee   Thomas Jefferson   Benjamin Harrison   Thomas Nelson, Jr.   Francis Lightfoot Lee   Carter Braxton [Column 4] Pennsylvania:\\n  Robert Morris   Benjamin Rush\\n   Benjamin Fran klin\\n   John Morton',\n '   George Clymer\\n   James Smith\\n   George Taylor\\n   James Wilson\\n   George Ross\\n Delaware:\\n   Caesar Rodney\\n   George Read\\n   Thomas McKean \\n[Column 5] New York:\\n   Wi lliam Floyd\\n   Philip Livingston\\n   Francis L ewis\\n   Lewis Morris\\n New Jersey:\\n   Richard Stockton\\n   John Witherspoon\\n   Francis Hopkinson\\n   John Hart\\n   Abraham Clark \\n[Column 6] New Hampshire:\\n   Josiah Bartlett\\n   William Whipple\\n Massachusetts:\\n   Samuel Adams\\n   John Adams\\n   Robert Treat Paine\\n   Elbridge Gerry\\n Rhode Island:\\n   Stephen Hopkins\\n   William Ellery\\n Connecticut:\\n   Roger Sherman\\n   Samuel Huntington\\n   William Williams\\n   Oliver Wolcott\\n New Hampshire:\\n Matthew Thornton\\n ']&quot; 
+     }, 
+     &quot;execution_count&quot;: 59, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;pdf_text&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T10:59:05.738750Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T10:59:05.727375Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;7a25fd9b0a4a8bf3&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;markdown&quot;, 
+   &quot;source&quot;: [ 
+    &quot;## Working with regular expressions&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false 
+   }, 
+   &quot;id&quot;: &quot;113c3b5fca417c49&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 60, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;text = \&quot;The phone number of the agent is 408-555-1234.Call soon!\&quot;&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T11:40:04.408761Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T11:40:04.391559Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;47fa34210ed69912&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 61, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;True&quot; 
+     }, 
+     &quot;execution_count&quot;: 61, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;\&quot;phone\&quot; in text&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T11:40:17.837585Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T11:40:17.821482Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;9bf0d1562a1060c6&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 62, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;import re&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T11:40:27.933973Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T11:40:27.905622Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;ede4e59e36a7748d&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 64, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;pattern = \&quot;phone\&quot;\n&quot;, 
+    &quot;my_match = re.search(pattern,text)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T11:41:33.808294Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T11:41:33.800066Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;fa2eb6c143e07f6&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 65, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;(4, 9)&quot; 
+     }, 
+     &quot;execution_count&quot;: 65, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;my_match.span()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T11:41:40.176239Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T11:41:40.152749Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;30dc8babda0ae820&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 66, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;4\n&quot;, 
+      &quot;9\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;print(my_match.start())\n&quot;, 
+    &quot;print(my_match.end())&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T11:42:03.483412Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T11:42:03.458370Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;acf1569fb9aeb086&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 67, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;2\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;line = \&quot;My phone is a new phone\&quot;\n&quot;, 
+    &quot;all_match = re.findall(pattern,line)\n&quot;, 
+    &quot;print(len(all_match))&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T11:43:29.926634Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T11:43:29.911407Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;8aa11a410880c2fd&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 68, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;(3, 8)\n&quot;, 
+      &quot;(18, 23)\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;for match in re.finditer(pattern,line):\n&quot;, 
+    &quot;    print(match.span())&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T11:44:46.680269Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T11:44:46.658677Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;bfe7da4e055d173e&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 69, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;'The phone number of the agent is 408-555-1234.Call soon!'&quot; 
+     }, 
+     &quot;execution_count&quot;: 69, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;text&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:20:45.954170Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:20:45.935028Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;f5e776ece3efb234&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 70, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;pattern_2 = r'\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d'&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:22:51.695844Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:22:51.662213Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;254eee2434780ed6&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 79, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;phone_no = re.search(pattern_2,text)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:25:03.643837Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:25:03.632962Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;35a90fd415c045b9&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 80, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;&lt;re.Match object; span=(33, 45), match='408-555-1234'&gt;&quot; 
+     }, 
+     &quot;execution_count&quot;: 80, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;phone_no&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:25:04.047003Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:25:04.041416Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;bec123228ff52d04&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 81, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;'408-555-1234'&quot; 
+     }, 
+     &quot;execution_count&quot;: 81, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;phone_no.group()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:25:04.414311Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:25:04.392755Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;504fedc57b37174c&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 82, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;'My old phone number was 408-555-1234.My new phone number is 123-456-7890'&quot; 
+     }, 
+     &quot;execution_count&quot;: 82, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;text_2 = 'My old phone number was 408-555-1234.My new phone number is 123-456-7890'\n&quot;, 
+    &quot;text_2&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:25:04.963459Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:25:04.952132Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;f39fd1b1acb2c46c&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 83, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;['408-555-1234', '123-456-7890']&quot; 
+     }, 
+     &quot;execution_count&quot;: 83, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;phone_no = re.findall(pattern_2,text_2)\n&quot;, 
+    &quot;phone_no&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:25:05.370618Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:25:05.365700Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;5d0576eb61b85515&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 84, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;pattern_3 = r'\\d{3}-\\d{3}-\\d{4}'&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:28:22.673230Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:28:22.641971Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;7781326cd237928f&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 86, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;'408-555-1234'&quot; 
+     }, 
+     &quot;execution_count&quot;: 86, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;phone_no = re.search(pattern_3,text)\n&quot;, 
+    &quot;phone_no.group()&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:29:00.450232Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:29:00.435211Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;9330373a7e1f3d72&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 91, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;'408'&quot; 
+     }, 
+     &quot;execution_count&quot;: 91, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;pattern_4 = r'(\\d{3})-(\\d{3})-(\\d{4})'\n&quot;, 
+    &quot;match = re.search(pattern_4,text)\n&quot;, 
+    &quot;match.group(1)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:34:26.506760Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:34:26.492509Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;1ccc0c55a65032ff&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 92, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;&lt;re.Match object; span=(5, 10), match='woman'&gt;&quot; 
+     }, 
+     &quot;execution_count&quot;: 92, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;re.search(r'man|woman',\&quot;This woman was here\&quot;)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:35:03.211454Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:35:03.180521Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;8253c9815f9b1d23&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 94, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;['cat', 'hat', 'sat', 'lat']&quot; 
+     }, 
+     &quot;execution_count&quot;: 94, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;re.findall(r\&quot;.at\&quot;,\&quot;The cat in the hat sat and splat\&quot;)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:49:51.575029Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:49:51.564647Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;230d9e0053f105ef&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 97, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;[' cat', ' hat', ' sat', 'plat']&quot; 
+     }, 
+     &quot;execution_count&quot;: 97, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;re.findall(r\&quot;..at\&quot;,\&quot;The cat in the hat sat and splat\&quot;)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:50:18.011454Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:50:18.000353Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;c822d4039bd18d8e&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 98, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;['1']&quot; 
+     }, 
+     &quot;execution_count&quot;: 98, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;re.findall(r\&quot;^\\d\&quot;,'1 is the loneliest number')&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:51:05.340566Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:51:05.315709Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;16baf282ac779e&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 99, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;phrase = \&quot;There are 3 apples and 5 oranges\&quot;&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:51:50.267435Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:51:50.231289Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;2d830e1d18436ef6&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 106, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;['3', '5']&quot; 
+     }, 
+     &quot;execution_count&quot;: 106, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;re.findall(r'[\\d]',phrase) # For specifically selecting what we want&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:58:29.477065Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:58:29.455179Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;93105e074b0d8baf&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 100, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;['T',\n 'h',\n 'e',\n 'r',\n 'e',\n ' ',\n 'a',\n 'r',\n 'e',\n ' ',\n ' ',\n 'a',\n 'p',\n 'p',\n 'l',\n 'e',\n 's',\n ' ',\n 'a',\n 'n',\n 'd',\n ' ',\n ' ',\n 'o',\n 'r',\n 'a',\n 'n',\n 'g',\n 'e',\n 's']&quot; 
+     }, 
+     &quot;execution_count&quot;: 100, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;re.findall(r'[^\\d]',phrase) # For removing what we want add a power symbol&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:52:20.176332Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:52:20.117062Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;b5ada7bf5fdb5763&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 101, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;['There are ', ' apples and ', ' oranges']&quot; 
+     }, 
+     &quot;execution_count&quot;: 101, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;re.findall(r'[^\\d]+',phrase) # THe square brackets are used for removing the given value inside it.&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:52:33.843933Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:52:33.817695Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;e7572de727953802&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 102, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;phrase_2 = \&quot;This is a string! but it has punctuation.How to remove it?\&quot;&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:53:56.560073Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:53:56.536505Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;9db5ca0158d24e14&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 103, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;['This',\n 'is',\n 'a',\n 'string',\n 'but',\n 'it',\n 'has',\n 'punctuation',\n 'How',\n 'to',\n 'remove',\n 'it']&quot; 
+     }, 
+     &quot;execution_count&quot;: 103, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;re.findall(r'[^!.? ]+',phrase_2) # Removing the punctuation&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:55:16.850116Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:55:16.816501Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;eaaa9671cf5ad951&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 104, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;'This is a string but it has punctuation How to remove it'&quot; 
+     }, 
+     &quot;execution_count&quot;: 104, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;my_list = re.findall(r'[^!.? ]+', phrase_2)\n&quot;, 
+    &quot;' '.join(my_list)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T14:55:59.461807Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T14:55:59.438369Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;a571ad434b30994a&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 107, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;phrase_3 = \&quot;Only find the hyphen-words.Where are the long-ish dash words\&quot;&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T15:00:05.052708Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T15:00:05.047307Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;363a978dd971136e&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 108, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;data&quot;: { 
+      &quot;text/plain&quot;: &quot;['hyphen-words', 'long-ish']&quot; 
+     }, 
+     &quot;execution_count&quot;: 108, 
+     &quot;metadata&quot;: {}, 
+     &quot;output_type&quot;: &quot;execute_result&quot; 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;re.findall(r'[\\w]+-[\\w]+',phrase_3)&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T15:00:36.107236Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T15:00:36.074421Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;296b0c87788d122&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: 110, 
+   &quot;outputs&quot;: [ 
+    { 
+     &quot;name&quot;: &quot;stdout&quot;, 
+     &quot;output_type&quot;: &quot;stream&quot;, 
+     &quot;text&quot;: [ 
+      &quot;\u001B[31mERROR: You must give at least one requirement to install (see \&quot;pip help install\&quot;)\u001B[0m\u001B[31m\r\n&quot;, 
+      &quot;\u001B[0mNote: you may need to restart the kernel to use updated packages.\n&quot; 
+     ] 
+    } 
+   ], 
+   &quot;source&quot;: [ 
+    &quot;python -m pip install -U notebook-as-pdf\n&quot;, 
+    &quot;pyppeteer-install&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;ExecuteTime&quot;: { 
+     &quot;end_time&quot;: &quot;2023-11-04T15:19:05.753288Z&quot;, 
+     &quot;start_time&quot;: &quot;2023-11-04T15:19:04.957066Z&quot; 
+    } 
+   }, 
+   &quot;id&quot;: &quot;7a708001ab5c5286&quot; 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: null, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false 
+   }, 
+   &quot;id&quot;: &quot;bbc6ed229ae6355f&quot; 
+  } 
+ ], 
+ &quot;metadata&quot;: { 
+  &quot;kernelspec&quot;: { 
+   &quot;display_name&quot;: &quot;Python 3&quot;, 
+   &quot;language&quot;: &quot;python&quot;, 
+   &quot;name&quot;: &quot;python3&quot; 
+  }, 
+  &quot;language_info&quot;: { 
+   &quot;codemirror_mode&quot;: { 
+    &quot;name&quot;: &quot;ipython&quot;, 
+    &quot;version&quot;: 2 
+   }, 
+   &quot;file_extension&quot;: &quot;.py&quot;, 
+   &quot;mimetype&quot;: &quot;text/x-python&quot;, 
+   &quot;name&quot;: &quot;python&quot;, 
+   &quot;nbconvert_exporter&quot;: &quot;python&quot;, 
+   &quot;pygments_lexer&quot;: &quot;ipython2&quot;, 
+   &quot;version&quot;: &quot;2.7.6&quot; 
+  } 
+ }, 
+ &quot;nbformat&quot;: 4, 
+ &quot;nbformat_minor&quot;: 5 
+} 
+</span></pre>
+</body>
+</html>
