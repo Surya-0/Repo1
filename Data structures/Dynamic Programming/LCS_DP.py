@@ -4,10 +4,10 @@
 
 
 def lcs(X, Y, m, n, dp):
-    if (m == 0 or n == 0):
+    if m == 0 or n == 0:
         return 0
 
-    if (dp[m][n] != -1):
+    if dp[m][n] != -1:
         return dp[m][n]
 
     if X[m - 1] == Y[n - 1]:
