@@ -11,5 +11,5 @@ def get_num_ways(val, coins):
 if __name__ == "__main__":
     coins = [1, 5, 10]
     print("The coins array is : ", coins)
-    value = 12
+    value = 15
     print("The num of ways to arrive at the solution : ", get_num_ways(value, coins))
