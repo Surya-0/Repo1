@@ -9,6 +9,7 @@ maxint = int(1e9 + 7)
 
 def MatrixChainOrder(p, n):
     m = [[0 for x in range(n)] for x in range(n)]
+    print(m)
     for i in range(1, n):
         m[i][i] = 0
 
