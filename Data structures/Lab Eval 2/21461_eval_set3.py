@@ -36,6 +36,7 @@ if __name__ == "__main__":
     for i in range(n):
         a = int(input())
         value.append(a)
+    value.sort()
     print(get_valuables(V, value))
 
 #testcases tried
