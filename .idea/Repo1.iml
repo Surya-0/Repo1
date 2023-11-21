@@ -6,6 +6,5 @@
     </content>
     <orderEntry type="jdk" jdkName="Tf-metal" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Depth-Estimation-using-Stereovision" />
   </component>
 </module>
