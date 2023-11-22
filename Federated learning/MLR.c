@@ -594,7 +594,7 @@ void getMean(float array[], int arrayLen, float* mean){
     // printf("%s", printB);
 }
 
-// Pupulating the structure code
+// Populating the structure code
 int populateXTrain(char* X_train_path){
     
     // Populating X_train
