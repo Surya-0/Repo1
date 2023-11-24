@@ -57,4 +57,5 @@ Timestamp;Component_Name;Part_Number;Description;Quantity;Material;Supplier;Unit
 2027-08-01 08:00:00;FTS-001;33445;Fourier Transform Spectrometer Module;1;Zinc Sulfide, Aluminum;Vendor DDD;28000;22 weeks;High;External;A.2;FTS Integration;SEMI S456;Spectral Resolution Test;Provided by vendor;Level 2;80 kg;Custom packaging;RoHS, REACH;Safety interlocks during operation;200
 2027-09-01 08:00:00;ION-002;55667;Ion Implantation Module;1;Titanium, Silicon;Vendor EEE;22000;15 weeks;High;External;B.2;Ion Implantation Process;SEMI S678;Ion Dose Uniformity Test;Provided by vendor;Level 2;85 kg;Custom crate;RoHS, REACH;Safety interlocks during operation;190
 2027-10-01 08:00:00;EMF-002;77889;Electrostatic Magnetic Field Module;1;Ferrite, Copper;Vendor FFF;16000;14 weeks;High;External;A.3;EMF Integration;SEMI S234;Magnetic Field Strength Test;Provided by vendor;Level 1;55 kg;Custom crate;RoHS, REACH;-;150
-2027-11-01 08:00:00;UTS-002;99001;Ultrasonic Testing System;1;Polyethylene, Aluminum;
+2027-11-01 08:00:00;UTS-002;99001;Ultrasonic Testing System;1;Polyethylene, Aluminum;Vendor XYZ;15000;12 weeks;Medium;External;B.1;Ultrasonic Testing Integration;SEMI S345;Ultrasonic Testing;Provided by vendor;Level 1;50 kg;Custom packaging;RoHS, REACH;Safety interlocks during operation;140
+
