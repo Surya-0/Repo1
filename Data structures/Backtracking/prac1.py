@@ -28,7 +28,7 @@ def print_solution(mat):
 def NQueen(Mat, R):
     if R == len(Mat):
         print_solution(Mat)
-
+        return
 
     for i in range(len(Mat)):
         if issafe(Mat, R, i):
