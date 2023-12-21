@@ -24,7 +24,7 @@ def MatrixChainOrder(p, n):
                 q = m[i][k] + m[k + 1][j] + p[i - 1] * p[k] * p[j]
                 if q < m[i][j]:
                     m[i][j] = q
-
+    print(m)
     return m[1][n - 1]
 
 

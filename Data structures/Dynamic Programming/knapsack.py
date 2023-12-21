@@ -17,3 +17,6 @@ if __name__ == '__main__':
     W = 50
     n = len(profit)
     print(knapsack(W, weight, profit, n))
+# arr = [[0 for i in range(6)]for j in range(4)]
+# arr[1][2] = 4
+# print(arr)
