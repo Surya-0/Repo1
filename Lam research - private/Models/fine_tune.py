@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1AKvtcIsNr-91RIz5gmbHPVxGbL7xCZtc
 """
 
-pip install transformers
+# pip install transformers
 
 import pandas as pd
 from transformers import GPT2Tokenizer
