@@ -11,9 +11,9 @@
 --   let number = read input :: Integer
 --   putStrLn $ "The factorial of " ++ show number ++ " is: " ++ show (factorial number)
  
--- Multiplication function
-multiply :: Integer -> Integer -> Integer
-multiply a b = a * b
+-- -- Multiplication function
+-- multiply :: Integer -> Integer -> Integer
+-- multiply a b = a * b
 
 -- -- Main function
 -- main :: IO ()
@@ -28,6 +28,7 @@ multiply a b = a * b
 
 --   let result = multiply num1 num2
 --   putStrLn $ "The multiplication of " ++ show num1 ++ " and " ++ show num2 ++ " is: " ++ show result
+
 
 
 
