@@ -1,15 +1,15 @@
--- -- Factorial function using recursion
--- factorial :: Integer -> Integer
--- factorial 0 = 1
--- factorial n = n * factorial (n - 1)
+-- Factorial function using recursion
+factorial :: Integer -> Integer
+factorial 0 = 1
+factorial n = n * factorial (n - 1)
 
--- -- Main function
--- main :: IO ()
--- main = do
---   putStrLn "Enter a number to calculate its factorial:"
---   input <- getLine
---   let number = read input :: Integer
---   putStrLn $ "The factorial of " ++ show number ++ " is: " ++ show (factorial number)
+-- Main function
+main :: IO ()
+main = do
+  putStrLn "Enter a number to calculate its factorial:"
+  input <- getLine
+  let number = read input :: Integer
+  putStrLn $ "The factorial of " ++ show number ++ " is: " ++ show (factorial number)
  
 -- -- Multiplication function
 -- multiply :: Integer -> Integer -> Integer
